@@ -1,2 +1,19 @@
 make a library array
 make sub arrays like history
+all book objects are stored inside an array.
+make book constructor
+create a new book function.
+make all books have a unique id which can be created using crypto.randomUUID(),
+
+const myLibrary = [];
+
+function Book() {
+  // the constructor...
+}
+
+function addBookToLibrary() {
+  // take params, create a book then store it in the array
+}
+
+write a function that loops through an array and displays each book on the page.
+add new. book button
