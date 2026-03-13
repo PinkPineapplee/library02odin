@@ -1,3 +1,5 @@
+const library = new Array();
+
 function Book(title,author,pages,read){
     this.title = title;
     this.author = author;
@@ -7,4 +9,8 @@ function Book(title,author,pages,read){
 }
 
 
-addNewBook
+function addNewBook(form){
+    const newBook = new Book()
+
+    return newBook
+}
