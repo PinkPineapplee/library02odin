@@ -24,20 +24,23 @@
         <dialog>
             <form action="https://httpbin.org/post" action="post">
                 <fieldset>
-                    <label for="book_title">Book Title:</label>
-                    <input type="text" name="book_title" id="book_title" placeholder="The Guardian">
-                </fieldset>
+                    <legend>Book form</legend>   
+                    <div>
+                        <label for="book_title">Book Title:</label>
+                        <input type="text" name="book_title" id="book_title" placeholder="The Guardian">
+                    </div>
 
-                <fieldset>
-                    <label for="author">Author:</label>
-                    <input type="text" name="author" id="author" placeholder="New times Newpaper">
-                </fieldset>
+                    <div>
+                        <label for="author">Author:</label>
+                        <input type="text" name="author" id="author" placeholder="New times Newpaper">
+                    </div>
 
-                <fieldset>
-                    <label for="pages">Pages:</label>
-                    <input type="number" name="pages" id="pages" placeholder="0">
+                    <div>
+                        <label for="pages">Pages:</label>
+                        <input type="number" name="pages" id="pages" placeholder="0">
+                    </div>
+                    <button type="submit">Submit</button>
                 </fieldset>
-                <button type="submit">Submit</button>
             </form>
         </dialog>
 
