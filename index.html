@@ -7,39 +7,35 @@
 </head>
 <body>
     <header>
+        <h1>Simple Library</h1>
         <ul>
-            <l1><h1>Simple Library</h1></l1>
+            
             <l1><input type="text"></l1>
-            <l1><nav>
+            <l1>
                 <ul>
                     <li>Add new book</li>
                     <li>About us</li>
                     <li>Buy</li>
                 </ul>
-            </nav></l1>
+            </l1>
         </ul>
     </header>
     <main>
         <dialog>
-            <form action="post">
+            <form action="https://httpbin.org/post" action="post">
                 <fieldset>
-                    <label for="title">Book Title</label>
-                    <input type="text" name="title">
+                    <label for="book_title">Book Title:</label>
+                    <input type="text" name="book_title" id="book_title" placeholder="The Guardian">
                 </fieldset>
 
                 <fieldset>
-                    <label for="title">Book Title</label>
-                    <input type="text" name="title">
+                    <label for="author">Author:</label>
+                    <input type="text" name="author" id="author" placeholder="New times Newpaper">
                 </fieldset>
 
                 <fieldset>
-                    <label for="title">Book Title</label>
-                    <input type="text" name="title">
-                </fieldset>
-
-                <fieldset>
-                    <label for="title">Book Title</label>
-                    <input type="text" name="title">
+                    <label for="pages">Pages:</label>
+                    <input type="number" name="pages" id="pages" placeholder="0">
                 </fieldset>
                 <button>Submit</button>
             </form>
