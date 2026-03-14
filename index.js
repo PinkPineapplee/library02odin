@@ -1,6 +1,8 @@
 const library = new Array();
 
-function Book(title,author,pages, read=false){
+//create a book constructor
+function Book(id, title,author,pages, read=false){
+    this.id = self.crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.pages = pages;
@@ -8,9 +10,11 @@ function Book(title,author,pages, read=false){
 
 }
 
-
-function addNewBook(form){
+//function that add new book to library array
+function addNewBook(title,author,pages){
     const newBook = new Book()
-
-    return newBook
+      
+    return library.push(newBook);
 }
+
+//
