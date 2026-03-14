@@ -1,4 +1,4 @@
-  const addNewBookBtn = document.querySelector(button)
+  const addNewBookBtn = document.querySelector("button");
 
 const library = new Array();
 
@@ -24,3 +24,12 @@ function addNewBook(title,author,pages){
  addNewBookBtn.addEventListener("click",()=>{
     addNewBook()
  })
+
+
+ //create new card for book
+
+   function createNewCard(){
+    let card = document.createElement("div");
+    let delBtn = document.createElement("button");
+    let info = document.createElement("div");
+}
