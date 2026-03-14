@@ -33,3 +33,7 @@ function addNewBook(title,author,pages){
     let delBtn = document.createElement("button");
     let info = document.createElement("div");
 }
+
+
+
+//write a function that loops through arrays and displays all cards in library in to display
