@@ -1,4 +1,7 @@
   const addNewBookBtn = document.querySelector("button");
+  const title = document.querySelector("#book-title");
+  const author = document.querySelector("#author");
+  const pages = document.querySelector("#pages");
 
 const library = new Array();
 const currentRead = new Array();
@@ -17,14 +20,15 @@ console.log(Book);
 
 //function that add new book to library array
 function addNewBook(title,author,pages){
-    const newBook = new Book(Book.id, title.value, author.value, pages.value, this.read);
+    const newBook = new Book(Book.id, title.value, author.value, pages.value, false);
       
-    return library.push(newBook);
+    return newBook;
 }
 
 // add event listener to get input values
  addNewBookBtn.addEventListener("click",()=>{
-    addNewBook()
+   const bookInstance = addNewBook()
+   library.push(bookInstance)
  })
 
 
