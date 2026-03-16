@@ -8,7 +8,7 @@ const currentRead = new Array();
 const newToLibrary = new Array();
 
 //create a book constructor with a unique ID
-function Book(id, title,author,pages, read=false){
+function Book(id, title,author,pages, read){
     this.id = self.crypto.randomUUID();
     this.title = title;
     this.author = author;
@@ -18,7 +18,7 @@ function Book(id, title,author,pages, read=false){
 }
 console.log(Book);
 
-//function that add new book to library array
+//function that adds new book to library array
 function addNewBook(title,author,pages){
     const newBook = new Book(Book.id, title.value, author.value, pages.value, false);
       
