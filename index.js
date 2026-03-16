@@ -1,4 +1,6 @@
   const addNewBookBtn = document.querySelector("button");
+  const leftArrow =document.querySelector(".left");
+    const rightArrow =document.querySelector(".right")
   const dialog = document.querySelector("dialog")
   const submitBtn = document.querySelector("#submit")
   const title = document.querySelector("#book-title");
@@ -43,6 +45,7 @@ dialog.showModal()
 
    function createNewCard(book){
     let card = document.createElement("div");
+    // add book background image
     let delBtn = document.createElement("button");
     let info = document.createElement("div");
 }
@@ -60,3 +63,4 @@ dialog.showModal()
 
  // add books for the last book to newtolibrary array
  // add books that is clicked to the current read array
+ // move cards left and right
