@@ -29,9 +29,12 @@ function addNewBook(title,author,pages){
     return newBook;
 }
 
+//show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal()
-})
+});
+
+
 // add event listener to get input values
  submitBtn.addEventListener("click",()=>{
    const bookInstance = addNewBook();
@@ -45,21 +48,26 @@ dialog.showModal()
 
    function createNewCard(book){
     let card = document.createElement("div");
+    card.classList
     // add book background image
     let delBtn = document.createElement("button");
     let info = document.createElement("div");
-}
 
 
 
-//write a function that loops through arrays and displays all cards in library[] into library gallary
+    //write a function that loops through arrays and displays all cards in library[] into library gallary
 
  function diplayLib(){
     
     for ( let book in library){
-       createNewCard();
+      
     }
  }
+}
+
+
+
+
 
  // add books for the last book to newtolibrary array
  // add books that is clicked to the current read array
