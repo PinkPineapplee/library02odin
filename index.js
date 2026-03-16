@@ -17,7 +17,7 @@ console.log(Book);
 
 //function that add new book to library array
 function addNewBook(title,author,pages){
-    const newBook = new Book();
+    const newBook = new Book(Book.id, title.value, author.value, pages.value, this.read);
       
     return library.push(newBook);
 }
@@ -46,3 +46,6 @@ function addNewBook(title,author,pages){
        createNewCard();
     }
  }
+
+ // add books for the last book to newtolibrary array
+ // add books that is clicked to the current read array
