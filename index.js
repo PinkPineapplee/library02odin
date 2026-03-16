@@ -1,11 +1,14 @@
   const addNewBookBtn = document.querySelector("button");
   const leftArrow =document.querySelector(".left");
-    const rightArrow =document.querySelector(".right")
+  const rightArrow =document.querySelector(".right")
   const dialog = document.querySelector("dialog")
   const submitBtn = document.querySelector("#submit")
   const title = document.querySelector("#book-title");
   const author = document.querySelector("#author");
   const pages = document.querySelector("#pages");
+  const currentGallary=document.getElementById("current-gallary");
+  const libraryGallary=document.getElementById("library-gallary");
+  const newGallary=document.getElementById("new-gallary");
 
 const library = new Array();
 const currentRead = new Array();
@@ -69,6 +72,6 @@ dialog.showModal()
 
 
 
- // add books for the last book to newtolibrary array
+ // add books for the last five books to newtolibrary array
  // add books that is clicked to the current read array
  // move cards left and right
