@@ -51,10 +51,12 @@ dialog.showModal()
 
    function createNewCard(book){
     let card = document.createElement("div");
-    card.classList
+    card.classList.add("card");
     // add book background image
     let delBtn = document.createElement("button");
+    delBtn.classList.add("delBtn");
     let info = document.createElement("div");
+    info.classList.add("info");
 
 
 
