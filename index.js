@@ -1,4 +1,6 @@
   const addNewBookBtn = document.querySelector("button");
+  const dialog = document.querySelector("dialog")
+  const submitBtn = document.querySelector("#submit")
   const title = document.querySelector("#book-title");
   const author = document.querySelector("#author");
   const pages = document.querySelector("#pages");
@@ -25,16 +27,21 @@ function addNewBook(title,author,pages){
     return newBook;
 }
 
+addNewBookBtn.addEventListener("click", ()=>{
+dialog.showModal()
+})
 // add event listener to get input values
- addNewBookBtn.addEventListener("click",()=>{
-   const bookInstance = addNewBook()
-   library.push(bookInstance)
+ submitBtn.addEventListener("click",()=>{
+   const bookInstance = addNewBook();
+   library.push(bookInstance);
+   dialog.close();
+   createNewCard(bookInstance);
  })
 
 
  //create new card for book
 
-   function createNewCard(){
+   function createNewCard(book){
     let card = document.createElement("div");
     let delBtn = document.createElement("button");
     let info = document.createElement("div");
