@@ -39,7 +39,8 @@ dialog.showModal()
 
 
 // add event listener to get input values
- submitBtn.addEventListener("click",()=>{
+ submitBtn.addEventListener("click",(event)=>{
+  event.preventDefault();
    const bookInstance = addNewBook();
    library.push(bookInstance);
    dialog.close();
