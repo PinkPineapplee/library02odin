@@ -78,3 +78,13 @@ dialog.showModal()
  // add books for the last five books to newtolibrary array
  // add books that is clicked to the current read array
  // move cards left and right
+
+
+ // book prototype function that toggles a book instances read status
+
+ Book.prototype.isRead = function(){
+   card.addEventListener("click",()=>{
+    Book.read = true;
+    currentRead.push(Book)
+   })
+ }
