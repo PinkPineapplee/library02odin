@@ -66,7 +66,7 @@ dialog.showModal()
  function diplayLib(){
     
     for ( let book in library){
-      libraryGallary.textContent += book;
+      libraryGallary.textContent += createNewCard(book);
     }
  }
 }
