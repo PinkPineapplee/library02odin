@@ -1,4 +1,4 @@
-  const addNewBookBtn = document.querySelector("button");
+  const addNewBookBtn = document.querySelector("button#add-new");
   const leftArrow =document.querySelector(".left");
   const rightArrow =document.querySelector(".right")
   const dialog = document.querySelector("dialog")
