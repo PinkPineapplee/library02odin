@@ -44,7 +44,8 @@ dialog.showModal()
    const bookInstance = addNewBook();
    library.push(bookInstance);
    dialog.close();
-   createNewCard(bookInstance);
+   libraryGallary.appendChild(bookInstance)
+
  })
 
 
