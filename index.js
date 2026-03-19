@@ -3,9 +3,9 @@
   const rightArrow =document.querySelector(".right")
   const dialog = document.querySelector("dialog")
   const submitBtn = document.querySelector("#submit")
-  const title = document.querySelector("#book-title");
-  const author = document.querySelector("#author");
-  const pages = document.querySelector("#pages");
+  const titleInput = document.querySelector("#book-title");
+  const authorInput = document.querySelector("#author");
+  const pagesInput = document.querySelector("#pages");
   const currentGallary=document.getElementById("current-gallary");
   const libraryGallary=document.getElementById("library-gallary");
   const newGallary=document.getElementById("new-gallary");
@@ -27,7 +27,7 @@ console.log(Book);
 
 //function that adds new book to library array
 function addNewBook(title,author,pages){
-    const newBook = new Book(title.value, author.value, pages.value, false);
+    let newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, false);
       
     return newBook;
 }
@@ -62,6 +62,9 @@ dialog.showModal()
 
 
 
+}
+
+
     //write a function that loops through arrays and displays all cards in library[] into library gallary
 
  function diplayLib(){
@@ -70,9 +73,6 @@ dialog.showModal()
       libraryGallary.textContent += createNewCard(book);
     }
  }
-}
-
-
 
 
 
