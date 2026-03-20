@@ -14,6 +14,10 @@ img[src="images/magnify.svg"]{
     width: 20px;
 }
 
+img[src="images/5921.jpg"]{
+    height: 30px;
+    width: 30px;
+}
 header ul{
     display:flex;
     list-style: none;
@@ -22,4 +26,13 @@ header ul{
 
 header ul a{
     text-decoration: none;
+    color: black;
+    margin-left: 5px;
+}
+
+
+footer{
+    background-color: rgb(197, 197, 249);
+    height: 10vh;
+    text-align: center;
 }
