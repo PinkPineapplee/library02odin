@@ -36,3 +36,9 @@ footer{
     height: 10vh;
     text-align: center;
 }
+
+#library-box, #current-box, #new-box{
+    display: flex;
+    height: 40vh;
+    background-color: rgb(234, 234, 255);
+}
