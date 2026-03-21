@@ -21,6 +21,7 @@ function Book(title,author,pages, read){
     this.author = author;
     this.pages = pages;
     this.read = read;
+    this.content = []
 
 }
 console.log(Book);
@@ -77,6 +78,11 @@ dialog.showModal()
 
 
  // add books for the last five books to newtolibrary array
+    function current(){
+      if(Book.read === true){
+        currentRead.push(library)
+      }
+    }
  // add books that is clicked to the current read array
  // move cards left and right
 
@@ -92,6 +98,6 @@ dialog.showModal()
 
  Book.prototype.bookInfo = function(){
 
- return `${this.title} writen by ${this.author} ${this.pages}.`;
+ return `${this.title} writen by ${this.author} \n ${this.pages}.`;
   }
  
