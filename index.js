@@ -89,3 +89,9 @@ dialog.showModal()
     currentRead.push(Book)
    })
  }
+
+ Book.prototype.bookInfo = function(){
+
+ return `${this.title} writen by ${this.author} ${this.pages}.`;
+  }
+ 
