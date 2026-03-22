@@ -105,4 +105,15 @@ dialog.showModal();
 
   Book.prototype.bookInfo = function(){
     return `${this.title} writen by ${this.author} \n ${this.pages}.`;
+  };
+
+  //make books move from right to left
+  function arrowNavigation(){
+    leftArrow.addEventListener("click",()=>{
+       //make library array items move to the left.
+    });
+
+    rightArrow.addEventListener("click",()=>{
+      //make library array items move to the right.
+    });
   }
