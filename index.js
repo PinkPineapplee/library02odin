@@ -91,11 +91,9 @@ dialog.showModal();
       }
     }
  // add books that is clicked to the current read array
- // move cards left and right
-
- Book.prototype.isRead = function(){
-    Book.read = true;
-    currentRead.push(Book)
+  Book.prototype.isRead = function(){
+    this.read = true;
+    currentRead.push()
    };
  
  
