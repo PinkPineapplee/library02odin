@@ -6,10 +6,10 @@ Building a simple library app
   add a function to move the books from left to right and from right to left.
   make a library array
    make sub arrays like history
-all book objects are stored inside an array.
-make book constructor
-create a new book function.
-make all books have a unique id which can be created using crypto.randomUUID(),
+    all book objects are stored inside an array.
+  make book constructor
+  create a new book function.
+  make all books have a unique id which can be created using crypto.randomUUID(),
 
 </p>
 

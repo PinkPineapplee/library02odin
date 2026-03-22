@@ -117,3 +117,6 @@ dialog.showModal();
       //make library array items move to the right.
     });
   }
+
+  //get new function
+  newToLibrary.slice(Math.max(library.length - 5, 1));
