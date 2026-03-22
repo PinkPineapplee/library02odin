@@ -66,7 +66,7 @@ dialog.showModal();
     info.append(p, delBtn);
     card.appendChild(info);
 
-    info.textContent = Book.bookInfo(book);
+    p.textContent = Book.bookInfo(book);
     delBtn.textContent = "DELETE";
 
 }
@@ -93,17 +93,18 @@ dialog.showModal();
  // add books that is clicked to the current read array
  // move cards left and right
 
-
- // book prototype function that toggles a book instances read status
-
  Book.prototype.isRead = function(){
-   card.addEventListener("click",()=>{
     Book.read = true;
     currentRead.push(Book)
-   })
- }
+   };
+ 
+ 
+//eventlistener to card
+  card.addEventListener("click",(e)=>{
+    e.Target.isRead();
+  });
 
- Book.prototype.bookInfo = function(){
+
+  Book.prototype.bookInfo = function(){
     return `${this.title} writen by ${this.author} \n ${this.pages}.`;
   }
- 
