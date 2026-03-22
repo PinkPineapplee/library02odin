@@ -28,24 +28,25 @@ console.log(Book);
 
 //function that adds new book to library array
 function addNewBook(title,author,pages){
-    let newBook = new Book(titleInput.value, authorInput.value, pagesInput.value, false);
+    let newBook = new Book(title,author,pages);
       
     return newBook;
 }
 
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
-dialog.showModal()
+dialog.showModal();
+
 });
 
 
 // add event listener to get input values
  submitBtn.addEventListener("click",(event)=>{
   event.preventDefault();
-   const bookInstance = addNewBook();
+   const bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
    library.push(bookInstance);
    dialog.close();
-   libraryGallary.appendChild(bookInstance)
+   
 
  })
 
@@ -71,6 +72,7 @@ dialog.showModal()
  function diplayLib(){
     
     for ( let book in library){
+     
       libraryGallary.textContent += createNewCard(book);
     }
  }
