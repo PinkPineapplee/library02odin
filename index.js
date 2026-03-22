@@ -61,9 +61,12 @@ dialog.showModal();
     delBtn.classList.add("delBtn");
     let info = document.createElement("div");
     info.classList.add("info");
+    // append children to card
+    info.appendChild(delBtn);
+    card.appendChild(info);
 
-    info.textContent=Book.bookInfo(book);
-    delBtn.textContent="DELETE";
+    info.textContent = Book.bookInfo(book);
+    delBtn.textContent = "DELETE";
 
 }
 
