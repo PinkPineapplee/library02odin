@@ -62,7 +62,8 @@ dialog.showModal();
     let info = document.createElement("div");
     info.classList.add("info");
 
-    info.textContent=Book.bookInfo(book)
+    info.textContent=Book.bookInfo(book);
+    delBtn.textContent="DELETE";
 
 }
 
