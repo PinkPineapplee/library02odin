@@ -15,12 +15,12 @@ const currentRead = new Array();
 const newToLibrary = new Array();
 
 //create a book constructor with a unique ID
-function Book(title,author,pages, read){
+function Book(title,author,pages){
     this.id = self.crypto.randomUUID();
     this.title = title;
     this.author = author;
     this.pages = pages;
-    this.read = read;
+    this.read = false;
     this.content = []
 
 }
@@ -52,7 +52,6 @@ dialog.showModal();
 
 
  //create new card for book
-
    function createNewCard(book){
     let card = document.createElement("div");
     card.classList.add("card");
@@ -60,9 +59,11 @@ dialog.showModal();
     let delBtn = document.createElement("button");
     delBtn.classList.add("delBtn");
     let info = document.createElement("div");
+    let p = document.createElement("p");
+
     info.classList.add("info");
     // append children to card
-    info.appendChild(delBtn);
+    info.append(p, delBtn);
     card.appendChild(info);
 
     info.textContent = Book.bookInfo(book);
@@ -73,14 +74,14 @@ dialog.showModal();
 
     //write a function that loops through arrays and displays all cards in library[] into library gallary
 
- function diplayLib(){
+ function displayLib(){
     
     for ( let book in library){
      
       libraryGallary.textContent += createNewCard(book);
     }
  }
-
+  displayLib();
 
 
  // add books for the last five books to newtolibrary array
