@@ -62,7 +62,7 @@ dialog.showModal();
     let info = document.createElement("div");
     info.classList.add("info");
 
-
+    info.textContent=Book.bookInfo(book)
 
 }
 
@@ -99,7 +99,6 @@ dialog.showModal();
  }
 
  Book.prototype.bookInfo = function(){
-
- return `${this.title} writen by ${this.author} \n ${this.pages}.`;
+    return `${this.title} writen by ${this.author} \n ${this.pages}.`;
   }
  
