@@ -86,7 +86,7 @@ dialog.showModal();
 
  // add books for the last five books to newtolibrary array
     function current(){
-      if(Book.read === true){
+      if(this.read === true){
         currentRead.push(library)
       }
     }
