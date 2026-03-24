@@ -6,6 +6,7 @@ header{
     width: 100vw;
     display: flex;
     background-color: rgb(197, 197, 249);
+    color: rgb(90, 26, 150);
 }
 header h1{
     width: 35%;
@@ -15,6 +16,8 @@ header ul{
     display: flex;
     align-items: center;
     justify-content: space-around;
+    list-style: none;
+   
 }
 header ul input{
     width: 15rem;
@@ -25,7 +28,9 @@ header ul input{
     color: whitesmoke;
     padding-left: 10px;
 }
-
+header ul li ul{
+    background-color: brown;
+}
 img[src="images/magnify.svg"]{
     height: 20px;
     width: 20px;
@@ -37,12 +42,6 @@ img[src="images/5921.jpg"]{
     width: 30px;
     margin-right: 10px;
     margin-left: 10px;
-}
-header ul{
-    display:flex;
-    list-style: none;
-    align-items: center;
-    
 }
 
 header ul a{
@@ -63,6 +62,7 @@ footer{
     height: 40vh;
     background-color: rgb(234, 234, 255);
     justify-content: space-between;
+    overflow: hidden;
 }
 
 .card{
@@ -92,4 +92,21 @@ footer{
 .arrow:hover{
     background-color: rgb(189, 143, 232);
    
+}
+
+button#add-new,a[href="about.html"],a[href="https://www.amazon.com/amz-books/store?ccs_id=9d8dca00-d3f7-4059-bfe8-6caa49b2adc9"]{
+    font-style: none;
+    border: 0;
+    background-color: rgb(197, 197, 249);
+    width: 4rem;
+    border-bottom: 2px solid rgb(74, 65, 129);
+    color: rgb(90, 26, 150);
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    padding: 0;
+    margin-left: 40px;
+}
+
+h2{
+    color: rgb(90, 26, 150);
+     font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
