@@ -46,7 +46,10 @@ dialog.showModal();
    const bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
    library.push(bookInstance);
    dialog.close();
-   
+   displayLib();
+
+console.log((bookInstance.id)+ "book has been added to library."
+)
 
  })
 
@@ -66,7 +69,7 @@ dialog.showModal();
     info.append(p, delBtn);
     card.appendChild(info);
 
-    p.textContent = Book.bookInfo(book);
+    p.textContent = book.bookInfo();
     delBtn.textContent = "DELETE";
 
 }
@@ -81,8 +84,7 @@ dialog.showModal();
       libraryGallary.textContent += createNewCard(book);
     }
  }
-  displayLib();
-
+  
 
  // add books for the last five books to newtolibrary array
     function current(){
