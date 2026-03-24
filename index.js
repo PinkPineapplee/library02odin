@@ -41,16 +41,16 @@ dialog.showModal();
 
 
 // add event listener to get input values
- submitBtn.addEventListener("click",(event)=>{
-  
-   const bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
+ submitBtn.addEventListener("click",(e)=>{
+  // e.preventDefault();
+   let bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
    library.push(bookInstance);
    dialog.close();
    displayLib();
- console.log(bookInstance); 
-console.log((bookInstance.id)+ "book has been added to library."
+  console.log(bookInstance); 
+  console.log((bookInstance.id)+ "book has been added to library."
 )
-event.preventDefault();
+
  })
 
 
@@ -102,11 +102,11 @@ event.preventDefault();
 
         for(let currentBook in library){
         currentRead.push(currentBook);
-        currentGallary.textContent = currentBook;
+        currentGallary.textContent += currentBook;
 
       }
     }}current();
-    
+
  // add books that is clicked to the current read array
   Book.prototype.isRead = function(){
     this.read = true;
