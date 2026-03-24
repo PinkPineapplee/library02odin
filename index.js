@@ -94,10 +94,12 @@ console.log((bookInstance.id)+ "book has been added to library."
     function current(){
       if(this.read === true){
 
-        for(let currentBook in library)(
-        currentRead.push(currentBook)
-      )}
-    }
+        for(let currentBook in library){
+        currentRead.push(currentBook);
+        currentGallary.textContent = currentBook;
+
+      }
+    }}
  // add books that is clicked to the current read array
   Book.prototype.isRead = function(){
     this.read = true;
@@ -122,4 +124,11 @@ console.log((bookInstance.id)+ "book has been added to library."
   }
 
   //get new function
-  newToLibrary.slice(Math.max(library.length - 5, 1));
+  function getNew(){
+  let newBooks = library.slice(Math.max(library.length - 5, 1));
+  newToLibrary.push(newBooks);
+  for (let book in newToLibrary){
+  newGallary.textContent += book;
+  }
+  }
+ 
