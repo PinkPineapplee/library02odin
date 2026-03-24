@@ -126,7 +126,7 @@ event.preventDefault();
        let item = library.pop(library.length);
        library.shift(item);
     });
-  }
+  }arrowNavigation()
 
   //get new function
   function getNew(){
@@ -134,6 +134,7 @@ event.preventDefault();
   newToLibrary.push(newBooks);
   for (let book in newToLibrary){
   newGallary.textContent += book;
-  }
-  }
+  };
+}getNew()
+  
  
