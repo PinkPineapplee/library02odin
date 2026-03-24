@@ -7,10 +7,29 @@ header{
     display: flex;
     background-color: rgb(197, 197, 249);
 }
+header h1{
+    width: 35%;
+}
+header ul{
+    width: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+header ul input{
+    width: 15rem;
+    height: 1.5rem;
+    background-color: rgb(255, 255, 255);
+    border: 0;
+    border-radius: 10px;
+    color: whitesmoke;
+    padding-left: 10px;
+}
 
 img[src="images/magnify.svg"]{
     height: 20px;
     width: 20px;
+    color: white;
 }
 
 img[src="images/5921.jpg"]{
@@ -67,10 +86,7 @@ footer{
     opacity: 0.25;
     display:flex;
     /* justify-content:center; */
-   align-items: center;
-   
-  
-    
+   align-items: center;   
 }
 
 .arrow:hover{

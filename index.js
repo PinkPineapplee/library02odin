@@ -29,7 +29,7 @@ function Book(title,author,pages){
 //function that adds new book to library array
 function addNewBook(title,author,pages){
     let newBook = new Book(title,author,pages);
-    console.log(newBook);  
+    
     return newBook;
 }
 
@@ -47,7 +47,7 @@ dialog.showModal();
    library.push(bookInstance);
    dialog.close();
    displayLib();
-
+ console.log(bookInstance); 
 console.log((bookInstance.id)+ "book has been added to library."
 )
 event.preventDefault();
