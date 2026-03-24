@@ -3,9 +3,9 @@
   const rightArrow =document.querySelector(".right")
   const dialog = document.querySelector("dialog")
   const submitBtn = document.querySelector("#submit")
-  const titleInput = document.querySelector("#book-title");
-  const authorInput = document.querySelector("#author");
-  const pagesInput = document.querySelector("#pages");
+  const titleInput = document.querySelector("input#book-title");
+  const authorInput = document.querySelector("input#author");
+  const pagesInput = document.querySelector("input#pages");
   const currentGallary=document.getElementById("current-gallary");
   const libraryGallary=document.getElementById("library-gallary");
   const newGallary=document.getElementById("new-gallary");
@@ -24,12 +24,12 @@ function Book(title,author,pages){
     this.content = []
 
 }
-console.log(Book);
+
 
 //function that adds new book to library array
 function addNewBook(title,author,pages){
     let newBook = new Book(title,author,pages);
-      
+    console.log(newBook);  
     return newBook;
 }
 
