@@ -40,8 +40,9 @@ img[src="images/magnify.svg"]{
 img[src="images/5921.jpg"]{
     height: 30px;
     width: 30px;
-    margin-right: 10px;
+    margin-right: 20px;
     margin-left: 10px;
+    border-radius: 50%;
 }
 
 header ul a{
@@ -63,6 +64,7 @@ footer{
     background-color: rgb(234, 234, 255);
     justify-content: space-between;
     overflow: hidden;
+    box-shadow: 5px 5px 10px gray;
 }
 
 .card{
