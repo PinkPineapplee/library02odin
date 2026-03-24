@@ -85,12 +85,18 @@ console.log((bookInstance.id)+ "book has been added to library."
     }
  }
   
+//eventlistener to card
+  card.addEventListener("click",(e)=>{
+    e.Target.isRead();
+  });
 
  // add books for the last five books to newtolibrary array
     function current(){
       if(this.read === true){
-        currentRead.push(library)
-      }
+
+        for(let currentBook in library)(
+        currentRead.push(currentBook)
+      )}
     }
  // add books that is clicked to the current read array
   Book.prototype.isRead = function(){
@@ -98,11 +104,6 @@ console.log((bookInstance.id)+ "book has been added to library."
     currentRead.push()
    };
  
- 
-//eventlistener to card
-  card.addEventListener("click",(e)=>{
-    e.Target.isRead();
-  });
 
 
   Book.prototype.bookInfo = function(){
