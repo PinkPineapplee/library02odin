@@ -116,10 +116,14 @@ console.log((bookInstance.id)+ "book has been added to library."
   function arrowNavigation(){
     leftArrow.addEventListener("click",()=>{
        //make library array items move to the left.
+       let item = library.unshift(library[0]);
+       library.push(item);
     });
 
     rightArrow.addEventListener("click",()=>{
       //make library array items move to the right.
+       let item = library.pop(library.length);
+       library.shift(item);
     });
   }
 
