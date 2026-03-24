@@ -43,6 +43,7 @@ footer{
 .card{
     height: 40vh;
     width: 20vh;
+     background-color: white;
 }
 
 .delBtn{
@@ -54,3 +55,14 @@ footer{
     border:0;
 }
 
+.arrow{
+    height: 40vh;
+    background-color: white;
+    opacity: 0.25;
+   
+    
+}
+
+.arrow:hover{
+    background-color: rgb(189, 143, 232);
+}
