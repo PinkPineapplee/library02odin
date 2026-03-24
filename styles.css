@@ -1,4 +1,6 @@
-
+main{
+    padding: 10vh;
+}
 header{
     height: 10vh;
     width: 100vw;
@@ -14,11 +16,14 @@ img[src="images/magnify.svg"]{
 img[src="images/5921.jpg"]{
     height: 30px;
     width: 30px;
+    margin-right: 10px;
+    margin-left: 10px;
 }
 header ul{
     display:flex;
     list-style: none;
-    align-items: space-around;
+    align-items: center;
+    
 }
 
 header ul a{
@@ -38,6 +43,7 @@ footer{
     display: flex;
     height: 40vh;
     background-color: rgb(234, 234, 255);
+    justify-content: space-between;
 }
 
 .card{
@@ -59,10 +65,15 @@ footer{
     height: 40vh;
     background-color: white;
     opacity: 0.25;
+    display:flex;
+    /* justify-content:center; */
+   align-items: center;
    
+  
     
 }
 
 .arrow:hover{
     background-color: rgb(189, 143, 232);
+   
 }
