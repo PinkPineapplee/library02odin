@@ -6,7 +6,8 @@ header{
     width: 100vw;
     display: flex;
     background-color: rgb(197, 197, 249);
-    color: rgb(90, 26, 150);
+    color:rgb(90, 26, 150);
+    font-weight: 900;
 }
 header h1{
     width: 35%;
@@ -70,7 +71,7 @@ footer{
 .card{
     height: 40vh;
     width: 20vh;
-     background-color: white;
+    background-image:linear-gradient(45deg, brown, gold, rgb(12, 48, 12));
 }
 
 .delBtn{
@@ -81,7 +82,11 @@ footer{
     border-radius: 4px;
     border:0;
 }
-
+.info{
+    background-color: white;
+    height: 15%;
+    width: 100%;
+}
 .arrow{
     height: 40vh;
     background-color: white;
