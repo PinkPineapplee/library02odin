@@ -42,7 +42,7 @@ dialog.showModal();
 
 // add event listener to get input values
  submitBtn.addEventListener("click",(event)=>{
-  event.preventDefault();
+  
    const bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
    library.push(bookInstance);
    dialog.close();
@@ -50,7 +50,7 @@ dialog.showModal();
 
 console.log((bookInstance.id)+ "book has been added to library."
 )
-
+event.preventDefault();
  })
 
 
@@ -71,7 +71,11 @@ console.log((bookInstance.id)+ "book has been added to library."
 
     p.textContent = book.bookInfo();
     delBtn.textContent = "DELETE";
-
+   
+    //eventlistener to card
+  card.addEventListener("click",(e)=>{
+    e.target.isRead();
+  });
 }
 
 
@@ -85,10 +89,7 @@ console.log((bookInstance.id)+ "book has been added to library."
     }
  }
   
-//eventlistener to card
-  card.addEventListener("click",(e)=>{
-    e.Target.isRead();
-  });
+
 
  // add books for the last five books to newtolibrary array
     function current(){
