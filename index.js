@@ -6,9 +6,9 @@
   const titleInput = document.querySelector("input#book-title");
   const authorInput = document.querySelector("input#author");
   const pagesInput = document.querySelector("input#pages");
-  const currentGallary=document.getElementById("current-gallary");
-  const libraryGallary=document.getElementById("library-gallary");
-  const newGallary=document.getElementById("new-gallary");
+  const currentGallary=document.getElementById("current-box");
+  const libraryGallary=document.getElementById("library-box");
+  const newGallary=document.getElementById("new-box");
 
 const library = new Array();
 const currentRead = new Array();
@@ -71,7 +71,12 @@ event.preventDefault();
 
     p.textContent = book.bookInfo();
     delBtn.textContent = "DELETE";
-   
+
+
+   libraryGallary.appendChild(card);
+   currentGallary.appendChild(card);
+   newGallary.appendChild(card);
+
     //eventlistener to card
   card.addEventListener("click",(e)=>{
     e.target.isRead();
@@ -100,7 +105,8 @@ event.preventDefault();
         currentGallary.textContent = currentBook;
 
       }
-    }}
+    }}current();
+    
  // add books that is clicked to the current read array
   Book.prototype.isRead = function(){
     this.read = true;
