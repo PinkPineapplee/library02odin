@@ -1,14 +1,14 @@
   const addNewBookBtn = document.querySelector("button#add-new");
-  const leftArrow =document.querySelector(".left");
-  const rightArrow =document.querySelector(".right")
+  const leftArrow = document.querySelector(".left");
+  const rightArrow = document.querySelector(".right")
   const dialog = document.querySelector("dialog")
   const submitBtn = document.querySelector("#submit")
   const titleInput = document.querySelector("input#book-title");
   const authorInput = document.querySelector("input#author");
   const pagesInput = document.querySelector("input#pages");
-  const currentGallary=document.getElementById("current-box");
-  const libraryGallary=document.getElementById("library-box");
-  const newGallary=document.getElementById("new-box");
+  const currentGallary = document.getElementById("current-box");
+  const libraryGallary = document.getElementById("library-box");
+  const newGallary = document.getElementById("new-box");
 
 const library = new Array();
 const currentRead = new Array();
@@ -21,28 +21,25 @@ function Book(title,author,pages){
     this.author = author;
     this.pages = pages;
     this.read = false;
-    this.content = []
-
+    this.content = [];
 }
 
 
 //function that adds new book to library array
 function addNewBook(title,author,pages){
-    let newBook = new Book(title,author,pages);
-    
+    let newBook = new Book(title,author,pages);  
     return newBook;
 }
 
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
-
 });
 
 
 // add event listener to get input values
- submitBtn.addEventListener("click",(e)=>{
-  // e.preventDefault();
+ document.querySelector("form").addEventListener("submit",(e)=>{
+   e.preventDefault();
    let bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
    library.push(bookInstance);
    dialog.close();
@@ -51,20 +48,21 @@ dialog.showModal();
   console.log((bookInstance.id)+ "book has been added to library."
 )
 
- })
+ });
 
 
  //create new card for book
    function createNewCard(book){
     let card = document.createElement("div");
     card.classList.add("card");
+
     // add book background image
     let delBtn = document.createElement("button");
     delBtn.classList.add("delBtn");
     let info = document.createElement("div");
     let p = document.createElement("p");
-
     info.classList.add("info");
+
     // append children to card
     info.append(p, delBtn);
     card.appendChild(info);
@@ -86,10 +84,8 @@ dialog.showModal();
 
     //write a function that loops through arrays and displays all cards in library[] into library gallary
 
- function displayLib(){
-    
-    for ( let book in library){
-     
+ function displayLib(){ 
+    for ( let book in library){  
       libraryGallary.textContent += createNewCard(book);
     }
  }
