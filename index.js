@@ -120,19 +120,21 @@ dialog.showModal();
   };
 
   //make books move from right to left
-  function arrowNavigation(){
+  function arrowNavigation(array){
     leftArrow.addEventListener("click",()=>{
        //make library array items move to the left.
-       let item = library.unshift(library[0]);
-       library.push(item);
+       let item = array.unshift(array[0]);
+       array.push(item);
     });
 
     rightArrow.addEventListener("click",()=>{
-      //make library array items move to the right.
-       let item = library.pop(library.length);
-       library.shift(item);
+      //make array items move to the right.
+       let item = array.pop(array.length);
+       array.shift(item);
     });
-  }arrowNavigation()
+  }arrowNavigation(library);
+  arrowNavigation(newToLibrary);
+  arrowNavigation(currentRead);
 
   //get new function
   function getNew(){
