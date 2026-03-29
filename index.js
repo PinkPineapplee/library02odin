@@ -9,6 +9,7 @@
   const currentGallary = document.getElementById("current-box");
   const libraryGallary = document.getElementById("library-box");
   const newGallary = document.getElementById("new-box");
+  const form = document.getElementById("form");
 
 const library = new Array();
 const currentRead = new Array();
@@ -38,19 +39,21 @@ dialog.showModal();
 
 
 // add event listener to get input values
- document.querySelector("form").addEventListener("submit",(e)=>{
+ form.addEventListener("submit",(e)=>{
    e.preventDefault();
    let bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
    library.push(bookInstance);
-   dialog.close();
+   
    displayLib();
   console.log(bookInstance); 
   console.log((bookInstance.id)+ "book has been added to library."
 )
-
  });
 
-
+submitBtn.addEventListener("click",()=>{
+  dialog.close();
+  form.reset();
+})
  //create new card for book
    function createNewCard(book){
     let card = document.createElement("div");
@@ -85,8 +88,8 @@ dialog.showModal();
     //write a function that loops through arrays and displays all cards in library[] into library gallary
 
  function displayLib(){ 
-    for ( let book in library){  
-      libraryGallary.textContent += createNewCard(book);
+    for ( let book of library){  
+    createNewCard(book);
     }
  }
   
