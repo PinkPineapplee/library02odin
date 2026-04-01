@@ -139,14 +139,14 @@ submitBtn.addEventListener("click",()=>{
   function getNew(){
   let newBooks = library.slice(Math.max(library.length - 5, 1));
   newToLibrary.push(newBooks);
-  for (let book in newToLibrary){
+  for (let book of newToLibrary){
   newGallary.textContent += book;
   };
 }getNew()
   
  //delete button to remove all card for gallary and array.
 
- delBtn.addEventListener("click", (book)=>{
-   book.remove();
-
+ delBtn.addEventListener("click", (array)=>{
+   card.remove();
+   array.filter( e => e.target.id)
  })
