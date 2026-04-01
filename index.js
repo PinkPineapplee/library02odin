@@ -9,7 +9,7 @@
   const currentGallary = document.getElementById("current-box");
   const libraryGallary = document.getElementById("library-box");
   const newGallary = document.getElementById("new-box");
-  const form = document.getElementById("form");
+  const form = document.getElementById("#myForm");
 
 const library = new Array();
 const currentRead = new Array();
