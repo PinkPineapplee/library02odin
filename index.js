@@ -78,12 +78,12 @@ submitBtn.addEventListener("click",()=>{
    currentGallary.appendChild(card);
    newGallary.appendChild(card);
 
-    //eventlistener to card
-  card.addEventListener("click",(e)=>{
-    e.target.isRead();
-  });
+   return card
 }
-
+  //eventlistener to card
+  card.addEventListener("click",(e)=>{
+    e.target.id.isRead();
+  });
 
     //write a function that loops through arrays and displays all cards in library[] into library gallary
 
@@ -99,7 +99,7 @@ submitBtn.addEventListener("click",()=>{
     function current(){
       if(this.read === true){
 
-        for(let currentBook in library){
+        for(let currentBook of library){
         currentRead.push(currentBook);
         currentGallary.textContent += currentBook;
 
@@ -144,4 +144,9 @@ submitBtn.addEventListener("click",()=>{
   };
 }getNew()
   
- 
+ //delete button to remove all card for gallary and array.
+
+ delBtn.addEventListener("click", (book)=>{
+   book.remove();
+
+ })
