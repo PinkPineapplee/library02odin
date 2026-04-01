@@ -3,9 +3,9 @@
   const rightArrow = document.querySelector(".right")
   const dialog = document.querySelector("dialog")
   const submitBtn = document.querySelector("#submit")
-  const titleInput = document.querySelector("input#book-title");
-  const authorInput = document.querySelector("input#author");
-  const pagesInput = document.querySelector("input#pages");
+  const titleInput = document.querySelector("#book-title");
+  const authorInput = document.querySelector("#author");
+  const pagesInput = document.querySelector("#pages");
   const currentGallary = document.getElementById("current-box");
   const libraryGallary = document.getElementById("library-box");
   const newGallary = document.getElementById("new-box");
