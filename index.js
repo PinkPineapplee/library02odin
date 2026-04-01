@@ -9,7 +9,7 @@
   const currentGallary = document.getElementById("current-box");
   const libraryGallary = document.getElementById("library-box");
   const newGallary = document.getElementById("new-box");
-  const form = document.getElementById("#myForm");
+  const form = document.getElementById("myForm");
 
 const library = new Array();
 const currentRead = new Array();
@@ -78,13 +78,21 @@ submitBtn.addEventListener("click",()=>{
    currentGallary.appendChild(card);
    newGallary.appendChild(card);
 
-   return card
-}
   //eventlistener to card
   card.addEventListener("click",(e)=>{
-    e.target.id.isRead();
+    let bookTouched = e.target
+    bookTouched.id.isRead();
   });
 
+
+  //delete button to remove all card for gallary and array.
+
+ delBtn.addEventListener("click", (array)=>{
+   card.remove();
+   array.filter( e => e.target.id)
+ })
+}
+  
     //write a function that loops through arrays and displays all cards in library[] into library gallary
 
  function displayLib(){ 
@@ -144,9 +152,4 @@ submitBtn.addEventListener("click",()=>{
   };
 }getNew()
   
- //delete button to remove all card for gallary and array.
-
- delBtn.addEventListener("click", (array)=>{
-   card.remove();
-   array.filter( e => e.target.id)
- })
+ 
