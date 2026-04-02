@@ -30,18 +30,24 @@
                 <fieldset>
                     <legend>Book form</legend>   
                     <div>
-                        <label for="book_title">Book Title:</label>
+                        <label for="book_title" required aria-label="*">Book Title:</label>
                         <input type="text" name="book_title" id="book_title" placeholder="The Guardian" required>
                     </div>
 
                     <div>
-                        <label for="author">Author:</label>
+                        <label for="author" required aria-label="*">Author:</label>
                         <input type="text" name="author" id="author" placeholder="New times Newpaper" required>
                     </div>
 
                     <div>
-                        <label for="pages">Pages:</label>
+                        <label for="pages" required aria-label="*">Pages:</label>
                         <input type="number" name="pages" id="pages" placeholder="0" required>
+                    </div>
+
+                    <div>
+                         <label for="file" required aria-label="*">File:</label>
+                         <input id="file" name="file" type="file" required accept=".jpg, .jpeg, .png, .pdf" />
+      
                     </div>
                     <button id="submit" type="submit" >Submit</button>
                 </fieldset>
