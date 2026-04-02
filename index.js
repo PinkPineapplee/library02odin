@@ -1,11 +1,7 @@
   const addNewBookBtn = document.querySelector("button#add-new");
   const leftArrow = document.querySelector(".left");
   const rightArrow = document.querySelector(".right")
-  const dialog = document.querySelector("dialog")
-  const submitBtn = document.querySelector("#submit")
-  const titleInput = document.getElementById("book_title");
-  const authorInput = document.getElementById("author");
-  const pagesInput = document.getElementById("pages");
+  
   const currentGallary = document.getElementById("current-box");
   const libraryGallary = document.getElementById("library-box");
   const newGallary = document.getElementById("new-box");
@@ -26,23 +22,25 @@ function Book(title,author,pages){
 }
 
 
-//function that adds new book to library array
-function addNewBook(title,author,pages){
-    let newBook = new Book(title,author,pages);  
-    return newBook;
-}
 
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
 });
 
+  const dialog = document.querySelector("dialog")
+  const submitBtn = document.querySelector("#submit")
+  const titleInput = document.getElementById("book_title");
+  const authorInput = document.getElementById("author");
+  const pagesInput = document.getElementById("pages");
 
+//function that adds new book to library array
+function addNewBook(){
 // add event listener to get input values
  form.addEventListener("submit",(e)=>{
    e.preventDefault();
-   console.log("input for title:",  titleInput);
-   let bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
+   console.log("input for title:",  titleInput.value);
+   let bookInstance = new Book(titleInput.value, authorInput.value, pagesInput.value);
    library.push(bookInstance);
    
    displayLib();
@@ -54,6 +52,8 @@ submitBtn.addEventListener("click",()=>{
   dialog.close();
   form.reset();
 })
+
+}addNewBook()
  //create new card for book
    function createNewCard(book){
     let card = document.createElement("div");
