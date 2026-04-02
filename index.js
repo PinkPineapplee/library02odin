@@ -42,7 +42,7 @@ dialog.showModal();
  form.addEventListener("submit",(e)=>{
    e.preventDefault();
    console.log("input for title:",  titleInput);
-   let bookInstance = newbook(titleInput.value, authorInput.value, pagesInput.value);
+   let bookInstance = addNewBook(titleInput.value, authorInput.value, pagesInput.value);
    library.push(bookInstance);
    
    displayLib();
