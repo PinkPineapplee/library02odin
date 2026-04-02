@@ -30,9 +30,9 @@ dialog.showModal();
 
   const dialog = document.querySelector("dialog")
   const submitBtn = document.querySelector("#submit")
-  const titleInput = document.getElementById("book_title");
-  const authorInput = document.getElementById("author");
-  const pagesInput = document.getElementById("pages");
+  const titleInput = document.getElementById("book_title").value;
+  const authorInput = document.getElementById("author").value;
+  const pagesInput = document.getElementById("pages").value;
 
 //function that adds new book to library array
 function addNewBook(){
@@ -40,7 +40,7 @@ function addNewBook(){
  form.addEventListener("submit",(e)=>{
    e.preventDefault();
    console.log("input for title:",  titleInput.value);
-   let bookInstance = new Book(titleInput.value, authorInput.value, pagesInput.value);
+   let bookInstance = new Book(titleInput, authorInput, pagesInput);
    library.push(bookInstance);
    
    displayLib();

@@ -26,24 +26,24 @@
         </ul>
     </header>
      <dialog>
-            <form id="myForm" >
+            <form id="myForm" method="dialog" enctype="multipart/form-data" novalidate>
                 <fieldset>
                     <legend>Book form</legend>   
                     <div>
                         <label for="book_title">Book Title:</label>
-                        <input type="text" name="book_title" id="book_title" placeholder="The Guardian">
+                        <input type="text" name="book_title" id="book_title" placeholder="The Guardian" required>
                     </div>
 
                     <div>
                         <label for="author">Author:</label>
-                        <input type="text" name="author" id="author" placeholder="New times Newpaper">
+                        <input type="text" name="author" id="author" placeholder="New times Newpaper" required>
                     </div>
 
                     <div>
                         <label for="pages">Pages:</label>
-                        <input type="number" name="pages" id="pages" placeholder="0">
+                        <input type="number" name="pages" id="pages" placeholder="0" required>
                     </div>
-                    <button id="submit" type="submit" method="dialog">Submit</button>
+                    <button id="submit" type="submit" >Submit</button>
                 </fieldset>
             </form>
         </dialog>
