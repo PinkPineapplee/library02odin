@@ -69,7 +69,7 @@ footer{
 }
 
 .card{
-    height: 40vh;
+    height:30vh;
     width: 20vh;
     background-image:linear-gradient(45deg, brown, gold, rgb(12, 48, 12));
 }

@@ -2,9 +2,9 @@
   const leftArrow = document.querySelector(".left");
   const rightArrow = document.querySelector(".right")
   
-  const currentGallary = document.getElementById("current-box");
-  const libraryGallary = document.getElementById("library-box");
-  const newGallary = document.getElementById("new-box");
+  const currentGallary = document.getElementById("current-gallary");
+  const libraryGallary = document.getElementById("library-gallary");
+  const newGallary = document.getElementById("new-galary");
   const form = document.getElementById("myForm");
 
 const library = new Array();
