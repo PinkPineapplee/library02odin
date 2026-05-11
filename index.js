@@ -6,10 +6,9 @@
   const libraryGallary = document.getElementById("library-gallary");
   const newGallary = document.getElementById("new-galary");
   const form = document.getElementById("myForm");
-
-  const title = document.getElementById("book_title");
-  const author = document.getElementById("author");
-  const pages = document.getElementById("pages");
+  const dialog = document.querySelector("dialog")
+  const submitBtn = document.querySelector("#submit")
+ 
 
 const library = new Array();
 const currentRead = new Array();
@@ -32,18 +31,22 @@ addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
 });
 
-  const dialog = document.querySelector("dialog")
-  const submitBtn = document.querySelector("#submit")
-  const titleInput = title.value;
-  const authorInput = author.value;
-  const pagesInput = pages.value;
+ 
 
+  console.table(titleInput,authorInput,pagesInput);
+  
 //function that adds new book to library array
 function addNewBook(){
 // add event listener to get input values
  form.addEventListener("submit",(e)=>{
    e.preventDefault();
-   console.log("input for title:",  titleInput.value);
+
+   const data = new FormData("form");
+   const titleInput = data.get("book_title");
+   const authorInput = data.get("author");
+   const pagesInput = data.get("pages");
+
+   console.log("input for title:",  titleInput);
    let bookInstance = new Book(titleInput, authorInput, pagesInput);
    library.push(bookInstance);
    
@@ -78,9 +81,9 @@ submitBtn.addEventListener("click",()=>{
     delBtn.textContent = "DELETE";
 
 
-   libraryGallary.appendChild(card);
-   currentGallary.appendChild(card);
-   newGallary.appendChild(card);
+   //libraryGallary.appendChild(card);
+   //currentGallary.appendChild(card);
+   //newGallary.appendChild(card);
 
   //eventlistener to card
   card.addEventListener("click",(e)=>{
@@ -154,6 +157,6 @@ submitBtn.addEventListener("click",()=>{
   for (let book of newToLibrary){
   newGallary.textContent += book;
   };
-}getNew()
+}//getNew()
   
  
