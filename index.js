@@ -5,7 +5,7 @@
   const currentGallary = document.getElementById("current-gallary");
   const libraryGallary = document.getElementById("library-gallary");
   const newGallary = document.getElementById("new-galary");
-  const formBtn = document.getElementById("#submit");
+  const formBtn = document.getElementById("submit");
 
   const title = document.getElementById("book_title");
   const author = document.getElementById("author");
@@ -33,7 +33,7 @@ dialog.showModal();
 });
 
   const dialog = document.querySelector("dialog")
-  const submitBtn = document.querySelector("#submit")
+
   const titleInput = title.value;
   const authorInput = author.value;
   const pagesInput = pages.value;
@@ -42,7 +42,7 @@ dialog.showModal();
   
 //function that adds new book to library array
 function addNewBook(){
-  
+
    console.log("input for title:",  titleInput.value);
    let bookInstance = new Book(titleInput, authorInput, pagesInput);
    library.push(bookInstance);
