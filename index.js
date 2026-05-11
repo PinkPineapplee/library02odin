@@ -42,9 +42,7 @@ dialog.showModal();
   
 //function that adds new book to library array
 function addNewBook(){
-// add event listener to get input values
- formBtn.addEventListener("click",(e)=>{
-   e.preventDefault();
+  
    console.log("input for title:",  titleInput.value);
    let bookInstance = new Book(titleInput, authorInput, pagesInput);
    library.push(bookInstance);
@@ -52,9 +50,9 @@ function addNewBook(){
    displayLib();
   console.log(bookInstance); 
   console.log((bookInstance.id)+ "book has been added to library.");
- });
+ 
 
-submitBtn.addEventListener("click",()=>{
+formBtn.addEventListener("click",()=>{
   dialog.close();
   form.reset();
 })
