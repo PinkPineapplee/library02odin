@@ -7,9 +7,9 @@
   const newGallary = document.getElementById("new-galary");
   const formBtn = document.getElementById("submit");
 
-  const title = document.querySelector("#book_title");
-  const author = document.querySelector("#author");
-  const pages = document.querySelector("#pages");
+  const title = document.querySelector("div>input#book_title");
+  const author = document.querySelector("div>input#author");
+  const pages = document.querySelector("div>input#pages");
 
 const library = new Array();
 const currentRead = new Array();
