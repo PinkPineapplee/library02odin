@@ -7,6 +7,10 @@
   const newGallary = document.getElementById("new-galary");
   const form = document.getElementById("myForm");
 
+  const title = document.getElementById("book_title");
+  const author = document.getElementById("author");
+  const pages = document.getElementById("pages");
+
 const library = new Array();
 const currentRead = new Array();
 const newToLibrary = new Array();
@@ -30,9 +34,9 @@ dialog.showModal();
 
   const dialog = document.querySelector("dialog")
   const submitBtn = document.querySelector("#submit")
-  const titleInput = document.getElementById("book_title").value;
-  const authorInput = document.getElementById("author").value;
-  const pagesInput = document.getElementById("pages").value;
+  const titleInput = title.value;
+  const authorInput = author.value;
+  const pagesInput = pages.value;
 
 //function that adds new book to library array
 function addNewBook(){
