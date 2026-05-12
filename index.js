@@ -1,4 +1,6 @@
- console.log("No, I still work! you're just terrible at this. it's all you.")
+
+console.log("No, I still work! you're just terrible at this. it's all you.");
+
   const addNewBookBtn = document.querySelector("button#add-new");
   const leftArrow = document.querySelector(".left");
   const rightArrow = document.querySelector(".right")
@@ -8,10 +10,12 @@
   const newGallary = document.getElementById("new-galary");
   const formBtn = document.querySelector("#submit");
   const dialog = document.querySelector("dialog")
- 
-const library = new Array();
-const currentRead = new Array();
-const newToLibrary = new Array();
+  let title = document.querySelector("#book_title").value;
+  let author = document.querySelector("#author").value;
+  let pages = document.querySelector("#pages").value;
+  const library = new Array();
+  const currentRead = new Array();
+  const newToLibrary = new Array();
 
 //create a book constructor with a unique ID
 function Book(title,author,pages){
@@ -28,6 +32,7 @@ function Book(title,author,pages){
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
+addNewBook();
 });
 
   
@@ -37,13 +42,9 @@ dialog.showModal();
 
 //function that adds new book to library array
 function addNewBook(){ 
-  let title = document.querySelector("#book_title").value;
-  let author = document.querySelector("#author").value;
-  let pages = document.querySelector("#pages").value;
+  
 formBtn.addEventListener("click",(event)=>{
-  console.table(titleInput,authorInput,pagesInput);
- 
-   let bookInstance = new Book(title, author, pages);
+   let bookInstance = new Book("the top tea", "author media", 3098);
    library.push(bookInstance);
    
    displayLib();
@@ -52,7 +53,7 @@ formBtn.addEventListener("click",(event)=>{
  
   dialog.remove();
 })
-}addNewBook()
+}
 
 
 
