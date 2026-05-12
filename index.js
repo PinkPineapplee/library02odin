@@ -9,10 +9,15 @@ console.log("No, I still work! you're just terrible at this. it's all you.");
   const libraryGallary = document.getElementById("library-gallary");
   const newGallary = document.getElementById("new-galary");
   const formBtn = document.querySelector("#submit");
-  const dialog = document.querySelector("dialog")
+  const dialog = document.querySelector("dialog");
+
   let title = document.querySelector("#book_title").value;
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#pages").value;
+
+  title.value = "The Blazing star."
+  console.log(title);
+
   const library = new Array();
   const currentRead = new Array();
   const newToLibrary = new Array();
@@ -32,128 +37,125 @@ function Book(title,author,pages){
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
-addNewBook();
+addNewBook(title,author,pages);
 });
 
   
  
-  
-
-
 //function that adds new book to library array$
-function addNewBook(){ 
+function addNewBook(title,author, pages){ 
   
 formBtn.addEventListener("click",(event)=>{
    let bookInstance = new Book(title, author, pages);
    library.push(bookInstance);
    
-   displayLib();
-  console.log(bookInstance); 
-  console.log((bookInstance.id)+ "book has been added to library.");
+  // displayLib();
+   console.log(bookInstance); 
+   console.log((bookInstance.id)+ "book has been added to library.");
  
-  dialog.remove();
+   dialog.remove();
 })
 }
 
 
 
 
- //create new card for book
-   function createNewCard(book){
-    let card = document.createElement("div");
-    card.classList.add("card");
+//  //create new card for book
+//    function createNewCard(book){
+//     let card = document.createElement("div");
+//     card.classList.add("card");
 
-    // add book background image
-    let delBtn = document.createElement("button");
-    delBtn.classList.add("delBtn");
-    let info = document.createElement("div");
-    let p = document.createElement("p");
-    info.classList.add("info");
+//     // add book background image
+//     let delBtn = document.createElement("button");
+//     delBtn.classList.add("delBtn");
+//     let info = document.createElement("div");
+//     let p = document.createElement("p");
+//     info.classList.add("info");
 
-    // append children to card
-    info.append(p, delBtn);
-    card.appendChild(info);
+//     // append children to card
+//     info.append(p, delBtn);
+//     card.appendChild(info);
 
-    p.textContent = book.bookInfo();
-    delBtn.textContent = "DELETE";
-
-
-   libraryGallary.appendChild(card);
-   currentGallary.appendChild(card);
-   newGallary.appendChild(card);
-
-  //eventlistener to card
-  card.addEventListener("click",(e)=>{
-    let bookTouched = e.target
-    bookTouched.id.isRead();
-  });
+//     p.textContent = book.bookInfo();
+//     delBtn.textContent = "DELETE";
 
 
-  //delete button to remove all card for gallary and array.
+//   //  libraryGallary.appendChild(card);
+//   //  currentGallary.appendChild(card);
+//   //  newGallary.appendChild(card);
 
- delBtn.addEventListener("click", (array)=>{
-   card.remove();
-   array.filter( e => e.target.id)
- })
-}
+//   //eventlistener to card
+//   card.addEventListener("click",(e)=>{
+//     let bookTouched = e.target
+//     bookTouched.id.isRead();
+//   });
+
+
+//   //delete button to remove all card for gallary and array.
+
+//  delBtn.addEventListener("click", (array)=>{
+//    card.remove();
+//    array.filter( e => e.target.id)
+//  })
+// }
   
-    //write a function that loops through arrays and displays all cards in library[] into library gallary
+//     //write a function that loops through arrays and displays all cards in library[] into library gallary
 
- function displayLib(){ 
-    for ( let book of library){  
-    createNewCard(book);
-    }
- }
+//  function displayLib(){ 
+//     for ( let book of library){  
+//     createNewCard(book);
+//     }
+//  }
   
 
 
- // add books for the last five books to newtolibrary array
-    function current(){
-      if(this.read === true){
+//  // add books for the last five books to newtolibrary array
+//     function current(){
+//       if(this.read === true){
 
-        for(let currentBook of library){
-        currentRead.push(currentBook);
-        currentGallary.textContent += currentBook;
+//         for(let currentBook of library){
+//         currentRead.push(currentBook);
+//         currentGallary.textContent += currentBook;
 
-      }
-    }}current();
+//       }
+//     }}current();
 
- // add books that is clicked to the current read array
-  Book.prototype.isRead = function(){
-    this.read = true;
-    currentRead.push()
-   };
+//  // add books that is clicked to the current read array
+//   Book.prototype.isRead = function(){
+//     this.read = true;
+//     currentRead.push()
+//    };
  
 
 
-  Book.prototype.bookInfo = function(){
-    return `${this.title} writen by ${this.author} \n ${this.pages}.`;
-  };
-
-  //make books move from right to left
-  function arrowNavigation(array){
-    leftArrow.addEventListener("click",()=>{
-       //make library array items move to the left.
-       let item = array.unshift(array[0]);
-       array.push(item);
-    });
-
-    rightArrow.addEventListener("click",()=>{
-      //make array items move to the right.
-       let item = array.pop(array.length);
-       array.shift(item);
-    });
-  }arrowNavigation(library);
-  arrowNavigation(newToLibrary);
-  arrowNavigation(currentRead);
-
-  //get new function
-//   function getNew(){
-//   let newBooks = library.slice(Math.max(library.length - 5, 1));
-//   newToLibrary.push(newBooks);
-//   for (let book of newToLibrary){
-//   newGallary.textContent += book;
+//   Book.prototype.bookInfo = function(){
+//     return `${this.title} writen by ${this.author} \n ${this.pages}.`;
 //   };
-// }getNew()
+
+//   //make books move from right to left
+//   function arrowNavigation(array){
+//     leftArrow.addEventListener("click",()=>{
+//        //make library array items move to the left.
+//        let item = array.unshift(array[0]);
+//        array.push(item);
+//     });
+
+//     rightArrow.addEventListener("click",()=>{
+//       //make array items move to the right.
+//        let item = array.pop(array.length);
+//        array.shift(item);
+//     });
+//   }arrowNavigation(library);
+//   arrowNavigation(newToLibrary);
+//   arrowNavigation(currentRead);
+
+//   //get new function
+// //   function getNew(){
+// //   let newBooks = library.slice(Math.max(library.length - 5, 1));
+// //   newToLibrary.push(newBooks);
+// //   for (let book of newToLibrary){
+// //   newGallary.textContent += book;
+// //   };
+// // }getNew()
   
  
