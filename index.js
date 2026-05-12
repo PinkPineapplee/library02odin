@@ -44,7 +44,7 @@ addNewBook();
 function addNewBook(){ 
   
 formBtn.addEventListener("click",(event)=>{
-   let bookInstance = new Book("the top tea", "author media", 3098);
+   let bookInstance = new Book(title, author, pages);
    library.push(bookInstance);
    
    displayLib();
