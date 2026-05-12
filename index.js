@@ -6,11 +6,8 @@
   const libraryGallary = document.getElementById("library-gallary");
   const newGallary = document.getElementById("new-galary");
   const formBtn = document.getElementById("submit");
-
-  const title = document.querySelector("div>input#book_title");
-  const author = document.querySelector("div>input#author");
-  const pages = document.querySelector("div>input#pages");
-
+  const dialog = document.querySelector("dialog")
+ 
 const library = new Array();
 const currentRead = new Array();
 const newToLibrary = new Array();
@@ -32,35 +29,35 @@ addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
 });
 
-  const dialog = document.querySelector("dialog")
-
-  const titleInput = title.value;
-  const authorInput = author.value;
-  const pagesInput = pages.value;
-
-  console.table(titleInput,authorInput,pagesInput);
   
+ 
+  
+
+
 //function that adds new book to library array
-function addNewBook(){
-
-  
+function addNewBook(){ 
 formBtn.addEventListener("click",(event)=>{
-
-  console.log("input for title:",  titleInput);
-   let bookInstance = new Book(titleInput, authorInput, pagesInput);
+  dialog.remove();
+  let title = document.querySelector("#book_title").value;
+  let author = document.querySelector("#author").value;
+  let pages = document.querySelector("#pages").value;
+ 
+  console.table(titleInput,authorInput,pagesInput);
+ 
+   let bookInstance = new Book(title, author, pages);
    library.push(bookInstance);
    
    displayLib();
   console.log(bookInstance); 
   console.log((bookInstance.id)+ "book has been added to library.");
  
-  dialog.close();
-   titleInput = "";
-  authorInput = "";
-   pagesInput = "";
+  
 })
-
 }addNewBook()
+
+
+
+
  //create new card for book
    function createNewCard(book){
     let card = document.createElement("div");
