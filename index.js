@@ -1,3 +1,4 @@
+ console.log("No, I still work! you're just terrible at this. it's all you.")
   const addNewBookBtn = document.querySelector("button#add-new");
   const leftArrow = document.querySelector(".left");
   const rightArrow = document.querySelector(".right")
@@ -5,7 +6,7 @@
   const currentGallary = document.getElementById("current-gallary");
   const libraryGallary = document.getElementById("library-gallary");
   const newGallary = document.getElementById("new-galary");
-  const formBtn = document.getElementById("submit");
+  const formBtn = document.querySelector("#submit");
   const dialog = document.querySelector("dialog")
  
 const library = new Array();
@@ -36,12 +37,10 @@ dialog.showModal();
 
 //function that adds new book to library array
 function addNewBook(){ 
-formBtn.addEventListener("click",(event)=>{
-  dialog.remove();
   let title = document.querySelector("#book_title").value;
   let author = document.querySelector("#author").value;
   let pages = document.querySelector("#pages").value;
- 
+formBtn.addEventListener("click",(event)=>{
   console.table(titleInput,authorInput,pagesInput);
  
    let bookInstance = new Book(title, author, pages);
@@ -51,7 +50,7 @@ formBtn.addEventListener("click",(event)=>{
   console.log(bookInstance); 
   console.log((bookInstance.id)+ "book has been added to library.");
  
-  
+  dialog.remove();
 })
 }addNewBook()
 
@@ -148,12 +147,12 @@ formBtn.addEventListener("click",(event)=>{
   arrowNavigation(currentRead);
 
   //get new function
-  function getNew(){
-  let newBooks = library.slice(Math.max(library.length - 5, 1));
-  newToLibrary.push(newBooks);
-  for (let book of newToLibrary){
-  newGallary.textContent += book;
-  };
-}getNew()
+//   function getNew(){
+//   let newBooks = library.slice(Math.max(library.length - 5, 1));
+//   newToLibrary.push(newBooks);
+//   for (let book of newToLibrary){
+//   newGallary.textContent += book;
+//   };
+// }getNew()
   
  
