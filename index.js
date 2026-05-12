@@ -40,7 +40,7 @@ addNewBook();
   
 
 
-//function that adds new book to library array
+//function that adds new book to library array$
 function addNewBook(){ 
   
 formBtn.addEventListener("click",(event)=>{
