@@ -50,12 +50,14 @@ formBtn.addEventListener("click",(event)=>{
 
     displayLib(bookInstance);
     console.log((bookInstance.title)+ " book has been added to library.");
- 
+    resetForm()
 });
-
 }
 
-
+// reset form function
+function resetForm(){
+  return(title.value = "", author.value = "", pages.value = "")
+}
     //write a function that loops through arrays and displays all cards in library[] into library gallar
  function displayLib(book){ 
     for ( book of library){ 
