@@ -42,20 +42,29 @@ addNewBook();
 function addNewBook(){ 
   
 formBtn.addEventListener("click",(event)=>{
-   dialog.remove();
+   dialog.close();
 
    let bookInstance = new Book(title.value, author.value, pages.value);
-   library.push(bookInstance);
+   
     console.log(title.value , author.value, pages.value);
 
-    displayLib();
+    displayLib(bookInstance);
+    console.log((bookInstance.title)+ " book has been added to library.");
  
-   console.log((bookInstance.title)+ " book has been added to library.");
-  
-})
+});
+
 }
 
 
+    //write a function that loops through arrays and displays all cards in library[] into library gallar
+ function displayLib(book){ 
+    for ( book of library){ 
+      library.push(book); 
+    createNewCard(book);
+     library.textContent += book;
+    }
+ }
+  
  //create new card for book
    function createNewCard(book){
     let card = document.createElement("div");
@@ -102,14 +111,6 @@ formBtn.addEventListener("click",(event)=>{
 
    
   }
-  
-    //write a function that loops through arrays and displays all cards in library[] into library gallar
- function displayLib(){ 
-    for ( let book of library){  
-    createNewCard(book);
-     libraryGallary.textContent += book;
-    }
- }
   
 
 
