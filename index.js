@@ -48,10 +48,10 @@ formBtn.addEventListener("click",(event)=>{
    
     console.log(title.value , author.value, pages.value);
     library.push(bookInstance); 
-    createNewCard(bookInstance);
-    libraryGallary.textContent += bookInstance;
+   
+    libraryGallary.textContent +=  createNewCard(bookInstance);
     console.log((bookInstance.title)+ " book has been added to library.");
-    resetForm()
+    resetForm();
 });
 }
 
@@ -82,14 +82,12 @@ function resetForm(){
     p.textContent = book.bookInfo();
     delBtn.textContent = "DELETE";
 
-
-   libraryGallary.appendChild(card);
-   currentGallary.appendChild(card);
-   newGallary.appendChild(card);
-
+  }
+  
+function readBook(){
   //eventlistener to card
   card.addEventListener("click",(e)=>{
-    let bookTouched = e.target
+    let bookTouched = e.target;
     bookTouched.id.isRead();
     alert(`I Know you want to read +${bookTouched.title}
       + right now but this library is for learning purposes 
@@ -103,12 +101,7 @@ function resetForm(){
    //array.filter( e => e.target.id)
  })
   });
-
-
-   
-  }
-  
-
+}
 
  // add books for the last five books to newtolibrary array
     function current(){
@@ -116,7 +109,7 @@ function resetForm(){
 
         for(let currentBook of library){
         currentRead.push(currentBook);
-        currentGallary.textContent += currentBook;
+        currentGallary.textContent += createNewCard(currentBook);
 
       }
     } return
@@ -158,7 +151,8 @@ function resetForm(){
   let newBooks = library.slice(Math.max(library.length - 5, 1));
   newToLibrary.push(newBooks);
   for (let book of newToLibrary){
-  newGallary.textContent += book;
+    
+  newGallary.textContent +=  createNewCard(book);
   };
 }getNew()
   
