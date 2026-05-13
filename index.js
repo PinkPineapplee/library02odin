@@ -47,8 +47,9 @@ formBtn.addEventListener("click",(event)=>{
    let bookInstance = new Book(title.value, author.value, pages.value);
    
     console.log(title.value , author.value, pages.value);
-
-    displayLib(bookInstance);
+    library.push(bookInstance); 
+    createNewCard(bookInstance);
+    libraryGallary.textContent += bookInstance;
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm()
 });
@@ -58,14 +59,7 @@ formBtn.addEventListener("click",(event)=>{
 function resetForm(){
   return(title.value = "", author.value = "", pages.value = "")
 }
-    //write a function that loops through arrays and displays all cards in library[] into library gallar
- function displayLib(book){ 
-    for ( book of library){ 
-      library.push(book); 
-    createNewCard(book);
-     library.textContent += book;
-    }
- }
+   
   
  //create new card for book
    function createNewCard(book){
@@ -154,7 +148,8 @@ function resetForm(){
        let item = array.pop(array.length);
        array.shift(item);
     });
-  }arrowNavigation(library);
+  }
+  arrowNavigation(library);
   arrowNavigation(newToLibrary);
   arrowNavigation(currentRead);
 
