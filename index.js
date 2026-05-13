@@ -48,8 +48,6 @@ formBtn.addEventListener("click",(event)=>{
    
     console.log(title.value , author.value, pages.value);
     library.push(bookInstance); 
-   
-    libraryGallary.textContent +=  createNewCard(bookInstance);
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
 });
@@ -57,7 +55,9 @@ formBtn.addEventListener("click",(event)=>{
 
 // reset form function
 function resetForm(){
-  return(title.value = "", author.value = "", pages.value = "")
+title.value = "";
+author.value = "";
+ pages.value = "";
 }
    
   
@@ -76,84 +76,88 @@ function resetForm(){
     info.classList.add("info");
 
     // append children to card
-    info.append(p, delBtn);
+    info.append(p , delBtn);
     card.appendChild(info);
 
     p.textContent = book.bookInfo();
     delBtn.textContent = "DELETE";
-
+    
+    libraryGallary.appendChild(card);
+    
+   
+    return card
   }
   
-function readBook(){
+Book.prototype.readBook = function(){
   //eventlistener to card
   card.addEventListener("click",(e)=>{
-    let bookTouched = e.target;
-    bookTouched.id.isRead();
-    alert(`I Know you want to read +${bookTouched.title}
-      + right now but this library is for learning purposes 
-      only, it's not connected to any library Apis or servers. 
-      Check again for future updates.`);
+    let bookClick = e.target;
+        bookClick.read = true;
+        alert(`I Know you want to read +${bookClick.title}
+          + right now but this library is for learning purposes 
+          only, it's not connected to any library Apis or servers. 
+          Check again for future updates.`);
 
   //delete button to remove all card for gallary and array.
  delBtn.addEventListener("click", (array)=>{
    card.remove();
-   library.pop(bookTouched.id);
+   library.delete(bookClick.id);
    //array.filter( e => e.target.id)
  })
   });
 }
 
- // add books for the last five books to newtolibrary array
-    function current(){
-      if(this.read === true){
-
-        for(let currentBook of library){
-        currentRead.push(currentBook);
-        currentGallary.textContent += createNewCard(currentBook);
-
-      }
-    } return
-  }current();
-
- // add books that is clicked to the current read array
-  Book.prototype.isRead = function(){
-    this.read = true;
-    currentRead.push()
-   };
- 
-
-
-  Book.prototype.bookInfo = function(){
+Book.prototype.bookInfo = function(){
     return `${this.title} writen by ${this.author} \n ${this.pages}.`;
   };
 
-  //make books move from right to left
-  function arrowNavigation(array){
-    leftArrow.addEventListener("click",()=>{
 
-       //make library array items move to the left.
-       let item = array.unshift(array[0]);
-       array.push(item);
-    });
+//  // add books for the last five books to newtolibrary array
+//     function current(){
+//       if(this.read === true){
 
-    rightArrow.addEventListener("click",()=>{
-      //make array items move to the right.
-       let item = array.pop(array.length);
-       array.shift(item);
-    });
-  }
-  arrowNavigation(library);
-  arrowNavigation(newToLibrary);
-  arrowNavigation(currentRead);
+//         for(let currentBook of library){
+//         currentRead.push(currentBook);
+//         //currentGallary.textContent += createNewCard(currentBook);
+//         currentGallary.appendChild(card);
+//       }
+//     } return
+//   }current();
 
-  //get new function
-  function getNew(){
-  let newBooks = library.slice(Math.max(library.length - 5, 1));
-  newToLibrary.push(newBooks);
-  for (let book of newToLibrary){
-    
-  newGallary.textContent +=  createNewCard(book);
-  };
-}getNew()
+ // add books that is clicked to the current read array
+ 
+ 
+
+
+  
+
+  // //make books move from right to left
+  // function arrowNavigation(array){
+  //   leftArrow.addEventListener("click",()=>{
+
+  //      //make library array items move to the left.
+  //      let item = array.unshift(array[0]);
+  //      array.push(item);
+  //   });
+
+  //   rightArrow.addEventListener("click",()=>{
+  //     //make array items move to the right.
+  //      let item = array.pop(array.length);
+  //      array.shift(item);
+  //   });
+  // }
+  // arrowNavigation(library);
+  // arrowNavigation(newToLibrary);
+  // arrowNavigation(currentRead);
+
+//   //get new function
+//   function getNew(){
+//   let newBooks = library.slice(Math.max(library.length - 5, 1));
+//   newToLibrary.push(newBooks);
+//   for (let book of newToLibrary){
+//     newGallary.appendChild(card); 
+//   //newGallary.textContent +=  createNewCard(book);
+//   };
+// }getNew()
   
  

@@ -74,6 +74,7 @@ footer{
     width: 200px;
     background-image:linear-gradient(34deg, rgb(239, 232, 243), rgb(192, 141, 232), rgb(248, 250, 248), purple, whitesmoke);
     margin-left: 2rem;
+    align-content: end;
 }
 
 .delBtn{
@@ -88,6 +89,10 @@ footer{
     background-color: white;
     height: 25%;
     width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
 }
 .arrow{
     height: 40vh;
