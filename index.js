@@ -16,8 +16,6 @@ console.log("No, I still work! you're just terrible at this. it's all you.");
   let pages = document.querySelector("#pages");
 
  
- 
-
   const library = new Array();
   const currentRead = new Array();
   const newToLibrary = new Array();
@@ -33,21 +31,19 @@ function Book(title,author,pages){
 }
 
 
-
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
 addNewBook();
 });
 
-  
- 
+   
 //function that adds new book to library array$
 function addNewBook(){ 
   
 formBtn.addEventListener("click",(event)=>{
    dialog.remove();
-   
+
    let bookInstance = new Book(title.value, author.value, pages.value);
    library.push(bookInstance);
     console.log(title.value , author.value, pages.value);
@@ -55,12 +51,9 @@ formBtn.addEventListener("click",(event)=>{
     displayLib();
  
    console.log((bookInstance.title)+ " book has been added to library.");
- 
   
 })
 }
-
-
 
 
  //create new card for book
@@ -70,7 +63,9 @@ formBtn.addEventListener("click",(event)=>{
 
     // add book background image
     let delBtn = document.createElement("button");
+    
     delBtn.classList.add("delBtn");
+    
     let info = document.createElement("div");
     let p = document.createElement("p");
     info.classList.add("info");
@@ -91,22 +86,28 @@ formBtn.addEventListener("click",(event)=>{
   card.addEventListener("click",(e)=>{
     let bookTouched = e.target
     bookTouched.id.isRead();
+    alert(`I Know you want to read +${bookTouched.title}
+      + right now but this library is for learning purposes 
+      only, it's not connected to any library Apis or servers. 
+      Check again for future updates.`);
+
+  //delete button to remove all card for gallary and array.
+ delBtn.addEventListener("click", (array)=>{
+   card.remove();
+   library.pop(bookTouched.id);
+   //array.filter( e => e.target.id)
+ })
   });
 
 
-  //delete button to remove all card for gallary and array.
-
- delBtn.addEventListener("click", (array)=>{
-   card.remove();
-   array.filter( e => e.target.id)
- })
-}
+   
+  }
   
-    //write a function that loops through arrays and displays all cards in library[] into library gallary
-
+    //write a function that loops through arrays and displays all cards in library[] into library gallar
  function displayLib(){ 
     for ( let book of library){  
     createNewCard(book);
+     libraryGallary.textContent += book;
     }
  }
   
@@ -121,7 +122,8 @@ formBtn.addEventListener("click",(event)=>{
         currentGallary.textContent += currentBook;
 
       }
-    }}current();
+    } return
+  }current();
 
  // add books that is clicked to the current read array
   Book.prototype.isRead = function(){
