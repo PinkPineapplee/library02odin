@@ -56,7 +56,7 @@ formBtn.addEventListener("click",(event)=>{
     
 });
 }
-
+// why is my a
 // reset form function
 function resetForm(){
 title.value = "";
@@ -67,16 +67,16 @@ author.value = "";
   
     if (array === library){
        console.log("displaying books in lib.");
-     libraryGallary.appendChild(card);
-    libraryGallary.textContent += createNewCard(book);
+     libraryGallary.appendChild(createNewCard(book));
+    
     }else if(array === currentRead){
       console.log("displaying books in currentRead. ");
-      currentGallary.appendChild(card);
-      currentGallary.textContent += createNewCard(book);
+      currentGallary.appendChild(createNewCard(book));
+      
     }else if(array === newToLibrary){
       console.log("displaying books in new to lib.");
-       newGallary.appendChild(card);
-      newGallary.textContent += createNewCard(book)
+       newGallary.appendChild(createNewCard(book));
+      
     }
     return
    }
@@ -102,7 +102,7 @@ author.value = "";
     info.append(p , delBtn);
     card.appendChild(info);
 
-    p.textContent = book.bookInfo();
+   // p.textContent = `${book.bookInfo()}`;
    
   
     delBtn.textContent = "DELETE";
