@@ -28,6 +28,7 @@ function Book(title,author,pages){
     this.pages = pages;
     this.read = false;
     this.content = [];
+    
 }
  
 
@@ -48,9 +49,11 @@ formBtn.addEventListener("click",(event)=>{
    
     console.log(title.value , author.value, pages.value);
     library.push(bookInstance); 
-   displayBook()
+   displayBooks(library, bookInstance);
+   
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
+    
 });
 }
 
@@ -60,14 +63,24 @@ title.value = "";
 author.value = "";
  pages.value = "";
 }
-   function displayBook (){
-  for(let book of library){
-     console.log("displaying books in lib.");
-    
-    libraryGallary.textContent += createNewCard(book);
-  };
-   }
+   function displayBooks(array, book){
   
+    if (array === library){
+       console.log("displaying books in lib.");
+     libraryGallary.appendChild(card);
+    libraryGallary.textContent += createNewCard(book);
+    }else if(array === currentRead){
+      console.log("displaying books in currentRead. ");
+      currentGallary.appendChild(card);
+      currentGallary.textContent += createNewCard(book);
+    }else if(array === newToLibrary){
+      console.log("displaying books in new to lib.");
+       newGallary.appendChild(card);
+      newGallary.textContent += createNewCard(book)
+    }
+    return
+   }
+
 
 
 
@@ -90,13 +103,13 @@ author.value = "";
     card.appendChild(info);
 
     p.textContent = book.bookInfo();
-    book.readBook();
+   
   
     delBtn.textContent = "DELETE";
     
-    libraryGallary.appendChild(card);
-    currentGallary.appendChild(card);
-    newGallary.appendChild(card);
+   
+   
+   
     
 
      //eventlistener to card
@@ -115,26 +128,27 @@ author.value = "";
         //array.filter( e => e.target.id)
       })
         });
+        return card;
   }
   
-   
+   console.log(card);
  
 
 Book.prototype.bookInfo = function(){
     return `${this.title} writen by ${this.author} \n ${this.pages}.`;
   };
 
- // add books for the last five books to newtolibrary array
-    function current(){
-      if(this.read === true){
+//  // add books for the last five books to newtolibrary array
+//     function current(){
+//       if(this.read === true){
 
-        for(let currentBook of currentRead){
-        currentRead.push(currentBook);
-        //currentGallary.textContent += createNewCard(currentBook);
+//         for(let currentBook of currentRead){
+//         currentRead.push(currentBook);
+//         //currentGallary.textContent += createNewCard(currentBook);
         
-      }
-    } return
-  }current();
+//       }
+//     } return
+//   }current();
 
  // add books that is clicked to the current read array
  
@@ -162,14 +176,14 @@ Book.prototype.bookInfo = function(){
   arrowNavigation(newToLibrary);
   arrowNavigation(currentRead);
 
-  //get new function
-  function getNew(){
-  let newBooks = library.slice(Math.max(library.length - 5, 1));
-  newToLibrary.push(newBooks);
-  for (let book of newToLibrary){
+//   //get new function
+//   function getNew(){
+//   let newBooks = library.slice(Math.max(library.length - 5, 1));
+//   newToLibrary.push(newBooks);
+//   for (let book of newToLibrary){
      
-  //newGallary.textContent +=  createNewCard(book);
-  };
-}getNew()
+//   //newGallary.textContent +=  createNewCard(book);
+//   };
+// }getNew()
   
  
