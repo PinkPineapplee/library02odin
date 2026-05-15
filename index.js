@@ -119,6 +119,9 @@ Book.prototype.bookInfo = function(){
     card.addEventListener("click",(e)=>{
       let bookClick = e.target;
           bookClick.read = true;
+          // add bookt to current reas when clicked
+          currentRead.push(bookClick);
+          currentGallary.appendChild(createNewCard(bookClick));
           alert(`"I Know you want to read" +${bookClick.title}
             + "right now but this library is for learn to code purposes 
             only, it's not connected to any external library Apis or servers. 
