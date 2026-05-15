@@ -35,7 +35,7 @@ function Book(title,author,pages){
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
-addNewBook();
+
 });
 
    
@@ -46,8 +46,7 @@ formBtn.addEventListener("click",(event)=>{
    dialog.close();
 
    let bookInstance = new Book(title.value, author.value, pages.value);
-   
-    console.log(title.value , author.value, pages.value);
+  
     library.push(bookInstance); 
     displayBooks(library, bookInstance);
    
@@ -55,13 +54,14 @@ formBtn.addEventListener("click",(event)=>{
     resetForm();
     
 });
-}
-// why is my a
+}addNewBook();
+
 // reset form function
 function resetForm(){
 title.value = "";
 author.value = "";
  pages.value = "";
+ bookInstance = "";
 }
    function displayBooks(array, book){
   
