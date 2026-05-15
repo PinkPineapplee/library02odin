@@ -93,8 +93,10 @@ Book.prototype.bookInfo = function(){
     card.classList.add("card");
 
     // add book background image
+    let readBtn= document.createElement("button");
     let delBtn = document.createElement("button");
-    
+
+    readBtn.classList.add("readBtn");
     delBtn.classList.add("delBtn");
     
     let info = document.createElement("div");
@@ -102,12 +104,12 @@ Book.prototype.bookInfo = function(){
     info.classList.add("info");
 
     // append children to card
-    info.append(p , delBtn);
+    info.append(p ,readBtn, delBtn);
     card.appendChild(info);
 
     p.textContent = `${book.bookInfo()}`;
    
-  
+    readBtn.textContent= "READ";
     delBtn.textContent = "DELETE";
     
    
@@ -116,7 +118,7 @@ Book.prototype.bookInfo = function(){
     
 
      //eventlistener to card
-    card.addEventListener("click",(e)=>{
+    readBtn.addEventListener("click",(e)=>{
       let bookClick = e.target;
           bookClick.read = true;
           // add bookt to current reas when clicked
@@ -144,6 +146,7 @@ Book.prototype.bookInfo = function(){
  // add books for the last five books to newtolibrary array
     function current(){
       if(this.read === true){
+        for (let currentBook of library)
         currentRead.push(currentBook);
         //currentGallary.textContent += createNewCard(currentBook);  
     } return
