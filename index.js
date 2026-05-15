@@ -49,7 +49,7 @@ formBtn.addEventListener("click",(event)=>{
    
     console.log(title.value , author.value, pages.value);
     library.push(bookInstance); 
-   displayBooks(library, bookInstance);
+    displayBooks(library, bookInstance);
    
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
@@ -81,6 +81,9 @@ author.value = "";
     return
    }
 
+Book.prototype.bookInfo = function(){
+    return `${this.title} writen by ${this.author} \n ${this.pages}.`;
+  };
 
 
 
@@ -102,7 +105,7 @@ author.value = "";
     info.append(p , delBtn);
     card.appendChild(info);
 
-   // p.textContent = `${book.bookInfo()}`;
+    p.textContent = `${book.bookInfo()}`;
    
   
     delBtn.textContent = "DELETE";
@@ -134,9 +137,6 @@ author.value = "";
    console.log(card);
  
 
-Book.prototype.bookInfo = function(){
-    return `${this.title} writen by ${this.author} \n ${this.pages}.`;
-  };
 
 //  // add books for the last five books to newtolibrary array
 //     function current(){
