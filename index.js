@@ -138,17 +138,13 @@ Book.prototype.bookInfo = function(){
  
 
 
-//  // add books for the last five books to newtolibrary array
-//     function current(){
-//       if(this.read === true){
-
-//         for(let currentBook of currentRead){
-//         currentRead.push(currentBook);
-//         //currentGallary.textContent += createNewCard(currentBook);
-        
-//       }
-//     } return
-//   }current();
+ // add books for the last five books to newtolibrary array
+    function current(){
+      if(this.read === true){
+        currentRead.push(currentBook);
+        //currentGallary.textContent += createNewCard(currentBook);  
+    } return
+  }current();
 
  // add books that is clicked to the current read array
  
