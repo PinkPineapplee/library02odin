@@ -143,11 +143,11 @@ Book.prototype.bookInfo = function(){
        
          // add bookt to current reas when clicked
           currentRead.push(book);
-          currentGallary.appendChild(createNewCard(bookClick));
-          alert(`"I Know you want to read" +${bookClick.title}
-            + "right now but this library is for learn to code purposes 
+          displayBooks(currentRead, bookClick);
+          alert(`I Know you want to read ${bookClick.title}
+             right now but this library is for learn to code purposes 
             only, it's not connected to any external library Apis or servers. 
-            Check again for future updates."`); 
+            Check again for future updates.`); 
     } return
   }
 
@@ -173,14 +173,14 @@ Book.prototype.bookInfo = function(){
   arrowNavigation(newToLibrary);
   arrowNavigation(currentRead);
 
-//   //get new function
-//   function getNew(){
-//   let newBooks = library.slice(Math.max(library.length - 5, 1));
-//   newToLibrary.push(newBooks);
-//   for (let book of newToLibrary){
+   //get new function
+  function getNew(){
+   newToLibrary = library.slice(Math.max(library.length - 5, 1));
+  
+   for (let book of newToLibrary){
      
-//   //newGallary.textContent +=  createNewCard(book);
-//   };
-// }getNew()
+  displayBooks(newToLibrary, book);
+     };
+ }getNew()
   
  
