@@ -121,13 +121,7 @@ Book.prototype.bookInfo = function(){
     readBtn.addEventListener("click",(e)=>{
       let bookClick = e.target;
           bookClick.read = true;
-          // add bookt to current reas when clicked
-          currentRead.push(bookClick);
-          currentGallary.appendChild(createNewCard(bookClick));
-          alert(`"I Know you want to read" +${bookClick.title}
-            + "right now but this library is for learn to code purposes 
-            only, it's not connected to any external library Apis or servers. 
-            Check again for future updates."`);
+         current(bookClick);
 
         //delete button to remove all card for gallary and array.
       delBtn.addEventListener("click", (array)=>{
@@ -144,21 +138,22 @@ Book.prototype.bookInfo = function(){
 
 
  // add books for the last five books to newtolibrary array
-    function current(){
+    function current(book){
       if(this.read === true){
-        for (let currentBook of library)
-        currentRead.push(currentBook);
-        //currentGallary.textContent += createNewCard(currentBook);  
+       
+         // add bookt to current reas when clicked
+          currentRead.push(book);
+          currentGallary.appendChild(createNewCard(bookClick));
+          alert(`"I Know you want to read" +${bookClick.title}
+            + "right now but this library is for learn to code purposes 
+            only, it's not connected to any external library Apis or servers. 
+            Check again for future updates."`); 
     } return
-  }current();
+  }
 
  // add books that is clicked to the current read array
  
  
-
-
-  
-
   //make books move from right to left
   function arrowNavigation(array){
     leftArrow.addEventListener("click",()=>{
