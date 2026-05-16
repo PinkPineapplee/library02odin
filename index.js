@@ -121,8 +121,13 @@ Book.prototype.bookInfo = function(){
     readBtn.addEventListener("click",(e)=>{
       let bookClick = e.target;
           bookClick.read = true;
-         current(bookClick);
+        
+         alert(`I Know you want to read ${bookClick.title}
+             right now but this library is for learn to code purposes 
+            only, it's not connected to any external library Apis or servers. 
+            Check again for future updates.`); 
 
+             current(bookClick);
         //delete button to remove all card for gallary and array.
       delBtn.addEventListener("click", (array)=>{
         card.remove();
@@ -144,10 +149,7 @@ Book.prototype.bookInfo = function(){
          // add bookt to current reas when clicked
           currentRead.push(book);
           displayBooks(currentRead, bookClick);
-          alert(`I Know you want to read ${bookClick.title}
-             right now but this library is for learn to code purposes 
-            only, it's not connected to any external library Apis or servers. 
-            Check again for future updates.`); 
+         
     } return
   }
 

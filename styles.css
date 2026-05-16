@@ -153,7 +153,6 @@ h2{
 
 #current-gallary, #library-gallary, #new-gallary{
     display: flex;
-    /* overflow: hidden;  */
     align-items: center;
     width: 500rem;
     height: auto;
