@@ -74,10 +74,12 @@ footer{
     width: 200px;
     background-image:linear-gradient(34deg, rgb(239, 232, 243), rgb(192, 141, 232), rgb(248, 250, 248), purple, whitesmoke);
     margin: 1rem;
-    align-content: end;
-    border: 2px solid rgb(221, 160, 221);
-    box-shadow: 5px 5px 10px rgb(246, 175, 247);
+    align-content: end; 
+}
 
+.card:hover{
+    border: 3px solid rgb(221, 176, 221);
+    box-shadow: 5px 5px 10px rgb(233, 212, 233);
 }
 
 .delBtn{
