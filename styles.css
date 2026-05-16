@@ -76,7 +76,7 @@ footer{
     margin: 1rem;
     align-content: end; 
     border-radius: 5px;
-    flex-shrink: 0;
+   flex:none;
 }
 
 .card:hover{
@@ -158,5 +158,5 @@ h2{
     width: 500rem;
     height: auto;
     overflow-x: scroll;
-    background-color: blue;
+   
 }
