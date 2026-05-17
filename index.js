@@ -18,7 +18,7 @@ console.log("No, I still work! you're just terrible at this. it's all you.");
  
   const library = new Array();
   const currentRead = new Array();
-  const newToLibrary = new Array();
+  let newToLibrary = new Array();
 
 //create a book constructor with a unique ID
 function Book(title,author,pages){
@@ -35,7 +35,6 @@ function Book(title,author,pages){
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
-
 });
 
    
@@ -58,8 +57,8 @@ formBtn.addEventListener("click",(event)=>{
 
 // reset form function
 function resetForm(){
-title.value = "";
-author.value = "";
+ title.value = "";
+ author.value = "";
  pages.value = "";
  bookInstance = "";
 }
@@ -75,7 +74,7 @@ author.value = "";
       
     }else if(array === newToLibrary){
       console.log("displaying books in new to lib.");
-       newGallary.appendChild(createNewCard(book));
+      newGallary.appendChild(createNewCard(book));
       
     }
     return
@@ -120,25 +119,30 @@ Book.prototype.bookInfo = function(){
      //eventlistener to card
     readBtn.addEventListener("click",(e)=>{
       let bookClick = e.target;
+      if(bookClick.read === false){
           bookClick.read = true;
         
          alert(`I Know you want to read ${bookClick.title}
              right now but this library is for learn to code purposes 
-            only, it's not connected to any external library Apis or servers. 
+            only, it's not connected to any external library APIs or servers. 
             Check again for future updates.`); 
 
              current(bookClick);
+
+             };
+
+             
         //delete button to remove all card for gallary and array.
       delBtn.addEventListener("click", (array)=>{
         card.remove();
         library.delete(bookClick.id);
-        //array.filter( e => e.target.id)
+        //array.filter( e => e.target.id);
       })
         });
-        return card;
+       return card;
   }
   
-   console.log(card);
+   
  
 
 
