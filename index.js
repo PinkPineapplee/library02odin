@@ -118,7 +118,8 @@ Book.prototype.bookInfo = function(){
 
      //eventlistener to card
     readBtn.addEventListener("click",(e)=>{
-      let bookClick = e.target;
+      let bookClick = e.target.read;
+      console.log(`this is bookClicked ${bookClick, bookClick.id}.`)
       if(bookClick.read === false){
           bookClick.read = true;
         
@@ -131,7 +132,7 @@ Book.prototype.bookInfo = function(){
 
              };
 
-             
+
         //delete button to remove all card for gallary and array.
       delBtn.addEventListener("click", (array)=>{
         card.remove();
