@@ -90,8 +90,8 @@ Book.prototype.bookInfo = function(){
    function createNewCard(book){
     let card = document.createElement("div");
     card.classList.add("card");
-    card.dataset.id = number(book.id);
-    
+    card.dataset.id = book.id;
+
     // add book background image
     let readBtn= document.createElement("button");
     let delBtn = document.createElement("button");
@@ -119,7 +119,12 @@ Book.prototype.bookInfo = function(){
 
      //eventlistener to card
     readBtn.addEventListener("click",(e)=>{
-      let bookClick = e.target.read;
+      let bookCard = e.target.closest(".card");
+      if (!bookCard) return;
+
+      const clickedId = Number(bookCard.dataset.id);
+
+      const clickedObj = library.find(book => book.id === clickedId);
       console.log(`this is bookClicked ${bookClick}.`)
       if(bookClick.read === false){
           bookClick.read = true;
