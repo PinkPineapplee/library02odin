@@ -125,16 +125,16 @@ Book.prototype.bookInfo = function(){
       const clickedId = Number(bookCard.dataset.id);
 
       const clickedObj = library.find(book => book.id === clickedId);
-      console.log(`this is bookClicked ${bookClick}.`)
-      if(bookClick.read === false){
-          bookClick.read = true;
+      console.log(`this is bookClicked ${clickedObj}.`)
+      if(clickedObj.read === false){
+          clickedObj.read = true;
         
-         alert(`I Know you want to read ${bookClick.title}
+         alert(`I Know you want to read ${clickedObj.title}
              right now but this library is for learn to code purposes 
             only, it's not connected to any external library APIs or servers. 
             Check again for future updates.`); 
 
-             current(bookClick);
+             current(clickedObj);
 
              };
 
@@ -142,7 +142,7 @@ Book.prototype.bookInfo = function(){
         //delete button to remove all card for gallary and array.
       delBtn.addEventListener("click", (array)=>{
         card.remove();
-        library.delete(bookClick.id);
+        library.delete(clickedObj.id);
         //array.filter( e => e.target.id);
       })
         });
