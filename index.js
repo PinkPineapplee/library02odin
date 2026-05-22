@@ -1,5 +1,5 @@
 
-console.log("No, I still work! you're just terrible at this. it's all you.");
+console.log("No, I still work! you're just terrible at this. it's all you, babe!");
 
   const addNewBookBtn = document.querySelector("button#add-new");
   const leftArrow = document.querySelector(".left");
@@ -120,20 +120,20 @@ Book.prototype.bookInfo = function(){
 
      //eventlistener to card
     readBtn.addEventListener("click",(e)=>{
-      let bookCard = e.target.closest(card);
+      let bookCard = e.target.closest(".card");
       if (!bookCard) return;
-
-      const clickedId = Number(bookCard.dataset.id);
-      console.log(`${clickedId, bookCard} is clickedid`);
+      console.log(bookCard);
+      const clickedId = bookCard.dataset.id;
+      console.log(clickedId, ` is clickedid`);
 
       const clickedObj = library.find(book => book.id === clickedId);
-      console.log(`this is bookClicked ${clickedObj}.`);
+      console.log(`this is bookClicked `, clickedObj);
 
       if(clickedObj.read === false){
           clickedObj.read = true;
-          console.log(`${clickedObj} is clickedObj`);
+          console.log(clickedObj,` is clickedObj`);
 
-          alert(`I know you want to read ${clickedObj.title}
+          alert(`I know you want to read `+ clickedObj.title + `
                  right now but this library is for learn to code purposes 
                  only, it's not connected to any external library APIs or servers. 
                  Check again for future updates.`); 
