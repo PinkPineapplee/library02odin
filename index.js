@@ -52,7 +52,8 @@ formBtn.addEventListener("click",(event)=>{
   
     library.push(bookInstance); 
     displayBooks(library, bookInstance);
-   
+    getNew();
+    
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
     
@@ -79,7 +80,7 @@ function resetForm(){
     }else if(array === newToLibrary){
       console.log("displaying books in new to lib.");
       newGallary.appendChild(createNewCard(book));
-       getNew();
+      
     }
     return
    }
