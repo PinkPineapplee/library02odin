@@ -32,6 +32,9 @@ function Book(title,author,pages){
     
 }
  
+  arrowNavigation(library);
+  arrowNavigation(newToLibrary);
+  arrowNavigation(currentRead);
 
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
@@ -76,7 +79,7 @@ function resetForm(){
     }else if(array === newToLibrary){
       console.log("displaying books in new to lib.");
       newGallary.appendChild(createNewCard(book));
-      
+       getNew();
     }
     return
    }
@@ -153,7 +156,14 @@ Book.prototype.bookInfo = function(){
   }
   
    
-
+ //get new function
+  function getNew(){
+   newToLibrary.push( library.slice( -1, library.length - 5));
+  
+   for (let book of newToLibrary){
+      displayBooks(newToLibrary, book);
+      console.log("hi I am displaying new books");
+     }};
  
  
   //make books move from right to left
@@ -163,26 +173,17 @@ Book.prototype.bookInfo = function(){
        //make library array items move to the left.
        let item = array.unshift(array[0]);
        array.push(item);
+       console.log("hi I am left arrow");
     });
 
     rightArrow.addEventListener("click",()=>{
       //make array items move to the right.
        let item = array.pop(array.length);
        array.shift(item);
+       console.log("hi I am right arrow");
     });
   }
-  arrowNavigation(library);
-  arrowNavigation(newToLibrary);
-  arrowNavigation(currentRead);
-
-   //get new function
-  function getNew(){
-   newToLibrary = library.slice(Math.max(library.length - 5, 1));
+ 
   
-   for (let book of newToLibrary){
-     
-  displayBooks(newToLibrary, book);
-     };
- }getNew()
   
  
