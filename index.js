@@ -138,19 +138,19 @@ Book.prototype.bookInfo = function(){
                  only, it's not connected to any external library APIs or servers. 
                  Check again for future updates.`); 
 
-      current(clickedObj);
+          current(clickedObj);
 
              };
 
 
         //delete button to remove all card for gallary and array.
-      delBtn.addEventListener("click", (array)=>{
+      delBtn.addEventListener("click", ()=>{
         card.remove();
-        library.delete(clickedObj.id);
+        library.delete(clickedObj);
         //array.filter( e => e.target.id);
       })
         });
-       return card;
+       return (card);
   }
   
    
@@ -161,9 +161,9 @@ Book.prototype.bookInfo = function(){
     function current(book){
       if(this.read === true){
        
-         // add bookt to current reas when clicked
+         // add book to current reas when clicked
           currentRead.push(book);
-          displayBooks(currentRead, bookClick);
+          displayBooks(currentRead, book);
          
     } return
   }
