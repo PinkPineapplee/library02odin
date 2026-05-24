@@ -112,11 +112,7 @@ Book.prototype.bookInfo = function(){
    
     readBtn.textContent= "READ";
     delBtn.textContent = "DELETE";
-    
-   
-   
-   
-    
+  
 
      //eventlistener to card
     readBtn.addEventListener("click",(e)=>{
@@ -132,7 +128,8 @@ Book.prototype.bookInfo = function(){
       if(clickedObj.read === false){
           clickedObj.read = true;
           console.log(clickedObj,` is clickedObj`);
-
+          currentRead.push(clickedObj);
+          displayBooks(currentRead,clickedObj);
           alert(`I know you want to read `+ clickedObj.title + `
                  right now but this library is for learn to code purposes 
                  only, it's not connected to any external library APIs or servers. 
@@ -162,8 +159,7 @@ Book.prototype.bookInfo = function(){
       if(this.read === true){
        
          // add book to current reas when clicked
-          currentRead.push(book);
-          displayBooks(currentRead, book);
+         
          
     } return
   }
