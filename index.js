@@ -82,7 +82,7 @@ function resetForm(){
    }
 
 Book.prototype.bookInfo = function(){
-    return `${this.title} writen by ${this.author} \n ${this.pages}.`;
+    return `${this.title} writen by ${this.author} \n has ${this.pages}pages.`;
   };
 
 
