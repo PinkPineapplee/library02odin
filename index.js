@@ -128,6 +128,8 @@ Book.prototype.bookInfo = function(){
       if(clickedObj.read === false){
           clickedObj.read = true;
           console.log(clickedObj,` is clickedObj`);
+
+        // add books that is clicked to the current read array
           currentRead.push(clickedObj);
           displayBooks(currentRead,clickedObj);
           alert(`I know you want to read `+ clickedObj.title + `
@@ -135,7 +137,7 @@ Book.prototype.bookInfo = function(){
                  only, it's not connected to any external library APIs or servers. 
                  Check again for future updates.`); 
 
-          current(clickedObj);
+         
 
              };
 
@@ -151,20 +153,7 @@ Book.prototype.bookInfo = function(){
   }
   
    
- 
 
-
- // add books for the last five books to newtolibrary array
-    function current(book){
-      if(this.read === true){
-       
-         // add book to current reas when clicked
-         
-         
-    } return
-  }
-
- // add books that is clicked to the current read array
  
  
   //make books move from right to left
