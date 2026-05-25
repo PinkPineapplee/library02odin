@@ -1,4 +1,4 @@
-import arrowNavigation from "arrowNavigation";
+import arrowNavigation from "arrowNavigation.js";
 
 console.log("No, I still work! you're just terrible at this. it's all you, babe!");
 

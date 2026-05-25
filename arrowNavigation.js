@@ -1,5 +1,5 @@
 //make books move from right to left
-  function arrowNavigation(array){
+   export function arrowNavigation(array){
     
     leftArrow.addEventListener("click",()=>{
       leftArrow.forEach(() => {
