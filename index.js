@@ -35,9 +35,9 @@ function Book(title,author,pages){
     
 }
   // connect page navigation to DOM
- libBox.addEventListener("hover",  arrowNavigation(library));
- currentBox.addEventListener("hover", arrowNavigation(currentRead));
- newBox.addEventListener("hover", arrowNavigation(newToLibrary));
+ libBox.addEventListener("mouseoover",  arrowNavigation(library));
+ currentBox.addEventListener("mouseover", arrowNavigation(currentRead));
+ newBox.addEventListener("mouseover", arrowNavigation(newToLibrary));
  
   
   
@@ -145,9 +145,6 @@ Book.prototype.bookInfo = function(){
                  right now but this library is for learn to code purposes 
                  only, it's not connected to any external library APIs or servers. 
                  Check again for future updates.`); 
-
-         
-
              };
 
 
