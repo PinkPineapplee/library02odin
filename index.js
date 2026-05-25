@@ -5,7 +5,7 @@ console.log("No, I still work! you're just terrible at this. it's all you, babe!
   const addNewBookBtn = document.querySelector("button#add-new");
   
   const libBox = document.querySelector(".library-box");
-  const currentBox =document.querySelector(".current-box");
+  const currentBox = document.querySelector(".current-box");
   const newBox =document.querySelector(".new-box");
 
   const currentGallary = document.querySelector("#current-gallary");
@@ -34,10 +34,12 @@ function Book(title,author,pages){
     this.content = [];
     
 }
+  // connect page navigation to DOM
+ libBox.addEventListener("hover",  arrowNavigation(library));
+ currentBox.addEventListener("hover", arrowNavigation(currentRead));
+ newBox.addEventListener("hover", arrowNavigation(newToLibrary));
+ 
   
- currentGallary.addEventListener("hover", arrowNavigation(currentRead));
-  arrowNavigation(library);
-  arrowNavigation(newToLibrary);
   
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
