@@ -1,3 +1,8 @@
+ const leftArrow = document.querySelectorAll(".left");
+  const rightArrow = document.querySelectorAll(".right");
+  const arrows = document.querySelectorAll(".arrow");
+
+
 //make books move from right to left
    export function arrowNavigation(array){
     

@@ -1,11 +1,9 @@
-import arrowNavigation from "arrowNavigation.js";
+import {arrowNavigation} from "./arrowNavigation.js";
 
 console.log("No, I still work! you're just terrible at this. it's all you, babe!");
 
   const addNewBookBtn = document.querySelector("button#add-new");
-  const leftArrow = document.querySelectorAll(".left");
-  const rightArrow = document.querySelectorAll(".right");
-  const arrows = document.querySelectorAll(".arrow");
+ 
 
   const currentGallary = document.querySelector("#current-gallary");
   const libraryGallary = document.querySelector("#library-gallary");
