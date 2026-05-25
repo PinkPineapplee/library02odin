@@ -3,7 +3,10 @@ import {arrowNavigation} from "./arrowNavigation.js";
 console.log("No, I still work! you're just terrible at this. it's all you, babe!");
 
   const addNewBookBtn = document.querySelector("button#add-new");
- 
+  
+  const libBox = document.querySelector(".library-box");
+  const currentBox =document.querySelector(".current-box");
+  const newBox =document.querySelector(".new-box");
 
   const currentGallary = document.querySelector("#current-gallary");
   const libraryGallary = document.querySelector("#library-gallary");
@@ -31,11 +34,11 @@ function Book(title,author,pages){
     this.content = [];
     
 }
- 
+  
+ currentGallary.addEventListener("hover", arrowNavigation(currentRead));
   arrowNavigation(library);
   arrowNavigation(newToLibrary);
-  arrowNavigation(currentRead);
-
+  
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
@@ -52,7 +55,7 @@ formBtn.addEventListener("click",(event)=>{
   
     library.push(bookInstance); 
     displayBooks(library, bookInstance);
-    getNew();
+    
     
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
@@ -164,7 +167,7 @@ Book.prototype.bookInfo = function(){
    for (let book of newToLibrary){
       displayBooks(newToLibrary, book);
       console.log("hi I am displaying new books");
-     }};
+     }} getNew();
  
  
   
