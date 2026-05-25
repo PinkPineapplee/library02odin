@@ -2,9 +2,10 @@
 console.log("No, I still work! you're just terrible at this. it's all you, babe!");
 
   const addNewBookBtn = document.querySelector("button#add-new");
-  const leftArrow = document.querySelector(".left");
-  const rightArrow = document.querySelector(".right")
-  
+  const leftArrow = document.querySelectorAll(".left");
+  const rightArrow = document.querySelectorAll(".right");
+  const arrows = document.querySelectorAll(".arrow");
+
   const currentGallary = document.querySelector("#current-gallary");
   const libraryGallary = document.querySelector("#library-gallary");
   const newGallary = document.getElementById("new-galary");
@@ -169,19 +170,23 @@ Book.prototype.bookInfo = function(){
  
   //make books move from right to left
   function arrowNavigation(array){
+    
     leftArrow.addEventListener("click",()=>{
-
+      leftArrow.forEach(() => {
        //make library array items move to the left.
        let item = array.unshift(array[0]);
        array.push(item);
        console.log("hi I am left arrow");
+       });
     });
 
     rightArrow.addEventListener("click",()=>{
+       rightArrow.forEach(() => {
       //make array items move to the right.
        let item = array.pop(array.length);
        array.shift(item);
        console.log("hi I am right arrow");
+       });
     });
   }
  
