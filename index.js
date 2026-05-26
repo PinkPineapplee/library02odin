@@ -28,7 +28,7 @@ console.log("No, I still work! you're just terrible at this. it's all you, babe!
   window.library = library;
   window.currentRead = currentRead;
   window.newToLibrary = newToLibrary;
-  
+
 //create a book constructor with a unique ID
 function Book(title,author,pages){
     this.id = self.crypto.randomUUID();
@@ -161,8 +161,9 @@ Book.prototype.bookInfo = function(){
    
  //get new function
   function getNew(){
-   newToLibrary.push(library.slice( -1, library.length - 5));
-   
+    for(let n = 1; n<= 5; n++){
+   newToLibrary.push(library.at(-n));
+   };
    for (let book of newToLibrary){
       displayBooks(newToLibrary, book);
       console.log("hi I am displaying new books");
