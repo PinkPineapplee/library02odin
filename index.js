@@ -99,6 +99,7 @@ Book.prototype.bookInfo = function(){
  //create new card for book
    function createNewCard(book){
     let card = document.createElement("div");
+     const clickedObj;
     card.classList.add("card");
     card.dataset.id = book.id;
 
@@ -131,7 +132,7 @@ Book.prototype.bookInfo = function(){
       const clickedId = bookCard.dataset.id;
       console.log(clickedId, ` is clickedid`);
 
-      const clickedObj = library.find(book => book.id === clickedId);
+      clickedObj = library.find(book => book.id === clickedId);
       console.log(`this is bookClicked `, clickedObj);
 
       if(clickedObj.read === false){
@@ -149,10 +150,9 @@ Book.prototype.bookInfo = function(){
         });
 
     //delete button to remove all card for gallary and array.
-      delBtn.addEventListener("click", ()=>{
-
+    delBtn.addEventListener("click", ()=>{
+      
         card.remove();
-        
       })
        return (card);
   }
