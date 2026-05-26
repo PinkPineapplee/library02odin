@@ -163,6 +163,7 @@ Book.prototype.bookInfo = function(){
   function getNew(){
     for(let n = 1; n<= 5; n++){
    newToLibrary.push(library.at(-n));
+   console.dir(newToLibrary);
    };
    for (let book of newToLibrary){
       displayBooks(newToLibrary, book);
@@ -172,9 +173,9 @@ Book.prototype.bookInfo = function(){
  
   
   // connect page navigation to DOM
- libBox.addEventListener("mouseoover",  arrowNavigation(library));
- currentBox.addEventListener("mouseover", arrowNavigation(currentRead));
- newBox.addEventListener("mouseover", arrowNavigation(newToLibrary));
+ libBox.addEventListener("mouseover", ()=> arrowNavigation(library));
+ currentBox.addEventListener("mouseover", ()=> arrowNavigation(currentRead));
+ newBox.addEventListener("mouseover", ()=> arrowNavigation(newToLibrary));
  
  
   
