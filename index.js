@@ -61,7 +61,7 @@ formBtn.addEventListener("click",(event)=>{
     
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
-    
+    libBox.addEventListener("mouseover", ()=> arrowNavigation(library));
 });
 }addNewBook();
 
@@ -71,13 +71,14 @@ function resetForm(){
  author.value = "";
  pages.value = "";
  
+ 
 }
    function displayBooks(array, book){
   
     if (array === library){
        console.log("displaying books in lib.");
      libraryGallary.appendChild(createNewCard(book));
-     getNew();
+     
     }else if(array === currentRead){
       console.log("displaying books in currentRead. ");
       currentGallary.appendChild(createNewCard(book));
@@ -99,7 +100,7 @@ Book.prototype.bookInfo = function(){
  //create new card for book
    function createNewCard(book){
     let card = document.createElement("div");
-     const clickedObj;
+    
     card.classList.add("card");
     card.dataset.id = book.id;
 
@@ -132,7 +133,7 @@ Book.prototype.bookInfo = function(){
       const clickedId = bookCard.dataset.id;
       console.log(clickedId, ` is clickedid`);
 
-      clickedObj = library.find(book => book.id === clickedId);
+       const clickedObj= library.find(book => book.id === clickedId);
       console.log(`this is bookClicked `, clickedObj);
 
       if(clickedObj.read === false){
@@ -142,6 +143,8 @@ Book.prototype.bookInfo = function(){
         // add books that is clicked to the current read array
           currentRead.push(clickedObj);
           displayBooks(currentRead,clickedObj);
+          currentBox.addEventListener("mouseover", ()=> arrowNavigation(currentRead));
+          
           alert(`I know you want to read `+ clickedObj.title + `
                  right now but this library is for learn to code purposes 
                  only, it's not connected to any external library APIs or servers. 
@@ -163,19 +166,22 @@ Book.prototype.bookInfo = function(){
     for(let n = 1; n <= 5; n++){
       if(library.length === n){
          newToLibrary.push(library.at(-n));
-         console.dir(newToLibrary);
-   }};
+   }
+   return
+  };
    for (let book of newToLibrary){
       displayBooks(newToLibrary, book);
-      console.log("hi I am displaying new books");
-     }} 
+      console.log("hi I am displaying getNew books");
+      newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));
+ 
+     }
+   } getNew();
  
  
   
-  // connect page navigation to DOM
- libBox.addEventListener("mouseover", ()=> arrowNavigation(library));
- currentBox.addEventListener("mouseover", ()=> arrowNavigation(currentRead));
- newBox.addEventListener("mouseover", ()=> arrowNavigation(newToLibrary));
+  
+ 
+ 
  
  
   
