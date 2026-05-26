@@ -70,7 +70,7 @@ function resetForm(){
  title.value = "";
  author.value = "";
  pages.value = "";
- bookInstance = "";
+ 
 }
    function displayBooks(array, book){
   
@@ -146,22 +146,21 @@ Book.prototype.bookInfo = function(){
                  only, it's not connected to any external library APIs or servers. 
                  Check again for future updates.`); 
              };
-
-
-        //delete button to remove all card for gallary and array.
-      delBtn.addEventListener("click", ()=>{
-        card.remove();
-        library.delete(clickedObj);
-        //array.filter( e => e.target.id);
-      })
         });
+
+    //delete button to remove all card for gallary and array.
+      delBtn.addEventListener("click", ()=>{
+
+        card.remove();
+        
+      })
        return (card);
   }
   
    
  //get new function
   function getNew(){
-    for(let n = 1; n<= 5; n++){
+    for(let n = 1; n <= 5; n++){
    newToLibrary.push(library.at(-n));
    console.dir(newToLibrary);
    };
