@@ -161,9 +161,10 @@ Book.prototype.bookInfo = function(){
  //get new function
   function getNew(){
     for(let n = 1; n <= 5; n++){
-   newToLibrary.push(library.at(-n));
-   console.dir(newToLibrary);
-   };
+      if(library.length === n){
+         newToLibrary.push(library.at(-n));
+         console.dir(newToLibrary);
+   }};
    for (let book of newToLibrary){
       displayBooks(newToLibrary, book);
       console.log("hi I am displaying new books");
