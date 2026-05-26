@@ -4,7 +4,7 @@ console.log("No, I still work! you're just terrible at this. it's all you, babe!
 
   const addNewBookBtn = document.querySelector("button#add-new");
   
-  const libBox = document.querySelector(".library-box");
+  const libBox = document.querySelector(".lib-box");
   const currentBox = document.querySelector(".current-box");
   const newBox =document.querySelector(".new-box");
 
@@ -19,11 +19,16 @@ console.log("No, I still work! you're just terrible at this. it's all you, babe!
   let author = document.querySelector("#author");
   let pages = document.querySelector("#pages");
 
- 
+  
   const library = new Array();
   const currentRead = new Array();
-  let newToLibrary = new Array();
+  const newToLibrary = new Array();
 
+  //expose module arrays to the window scope
+  window.library = library;
+  window.currentRead = currentRead;
+  window.newToLibrary = newToLibrary;
+  
 //create a book constructor with a unique ID
 function Book(title,author,pages){
     this.id = self.crypto.randomUUID();
@@ -34,11 +39,6 @@ function Book(title,author,pages){
     this.content = [];
     
 }
-  // connect page navigation to DOM
- libBox.addEventListener("mouseoover",  arrowNavigation(library));
- currentBox.addEventListener("mouseover", arrowNavigation(currentRead));
- newBox.addEventListener("mouseover", arrowNavigation(newToLibrary));
- 
   
   
 //show dialog modal for add new book form
@@ -77,7 +77,7 @@ function resetForm(){
     if (array === library){
        console.log("displaying books in lib.");
      libraryGallary.appendChild(createNewCard(book));
-    
+     getNew();
     }else if(array === currentRead){
       console.log("displaying books in currentRead. ");
       currentGallary.appendChild(createNewCard(book));
@@ -91,7 +91,7 @@ function resetForm(){
    }
 
 Book.prototype.bookInfo = function(){
-    return `${this.title} writen by ${this.author} \n has ${this.pages}pages.`;
+    return `${this.title} writen by ${this.author}.`;
   };
 
 
@@ -161,15 +161,20 @@ Book.prototype.bookInfo = function(){
    
  //get new function
   function getNew(){
-   newToLibrary.push( library.slice( -1, library.length - 5));
-  
+   newToLibrary.push(library.slice( -1, library.length - 5));
+   
    for (let book of newToLibrary){
       displayBooks(newToLibrary, book);
       console.log("hi I am displaying new books");
-     }} getNew();
+     }} 
  
  
   
+  // connect page navigation to DOM
+ libBox.addEventListener("mouseoover",  arrowNavigation(library));
+ currentBox.addEventListener("mouseover", arrowNavigation(currentRead));
+ newBox.addEventListener("mouseover", arrowNavigation(newToLibrary));
+ 
  
   
   

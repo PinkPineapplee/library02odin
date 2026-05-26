@@ -61,7 +61,7 @@ footer{
     text-align: center;
 }
 
-#library-box, #current-box, #new-box{
+#lib-box, #current-box, #new-box{
     display: flex;
     height: 40vh;
     width: 80vw;
@@ -88,8 +88,8 @@ footer{
      background-image:linear-gradient(34deg, rgb(242, 243, 232), rgb(232, 220, 141), rgb(248, 250, 248), rgb(200, 153, 22), whitesmoke);
 }
 .card:hover{
-    border: 3px solid rgb(221, 176, 221);
-    box-shadow: 5px 5px 10px rgb(233, 212, 233);
+    border: 3px solid rgb(255, 255, 255);
+    box-shadow: 5px 5px 10px rgb(255, 255, 255);
 }
 
 .delBtn{
