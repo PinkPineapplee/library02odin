@@ -155,8 +155,9 @@ Book.prototype.bookInfo = function(){
     //delete button to remove all card for gallary and array.
     delBtn.addEventListener("click", ()=>{
       card.remove();
-      })
-       return (card);
+      });
+       getNew()
+      return (card);
   }
   
    
@@ -171,7 +172,7 @@ Book.prototype.bookInfo = function(){
            }
           }
    // newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));   
-   } getNew();
+   }
  
  
   
