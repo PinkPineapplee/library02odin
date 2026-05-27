@@ -1,4 +1,4 @@
-import {arrowNavigation} from "./arrowNavigation.js";
+//import {arrowNavigation} from "./arrowNavigation.js";
 
 console.log("No, I still work! you're just terrible at this. it's all you, babe!");
 
@@ -61,7 +61,7 @@ formBtn.addEventListener("click",(event)=>{
     
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
-   // libBox.addEventListener("mouseover", ()=> arrowNavigation(library));
+    libBox.addEventListener("mouseover", () => arrowNavigation(library));
 });
 }addNewBook();
 
@@ -143,7 +143,7 @@ Book.prototype.bookInfo = function(){
         // add books that is clicked to the current read array
           currentRead.push(clickedObj);
           displayBooks(currentRead,clickedObj);
-         // currentBox.addEventListener("mouseover", ()=> arrowNavigation(currentRead));
+          currentBox.addEventListener("mouseover", ()=> arrowNavigation(currentRead));
           
           alert(`I know you want to read `+ clickedObj.title + `
                  right now but this library is for learn to code purposes 
@@ -156,7 +156,7 @@ Book.prototype.bookInfo = function(){
     delBtn.addEventListener("click", ()=>{
       card.remove();
       });
-       getNew()
+       
       return (card);
   }
   
@@ -171,11 +171,36 @@ Book.prototype.bookInfo = function(){
         console.log("hi I am displaying getNew books");
            }
           }
-   // newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));   
-   }
+   newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));   
+   }getNew();
  
  
-  
+  const leftArrow = document.querySelectorAll(".left");
+  const rightArrow = document.querySelectorAll(".right");
+  const arrows = document.querySelectorAll(".arrow");
+
+
+//make books move from right to left
+    function arrowNavigation(array){
+    
+    
+      leftArrow.forEach(arrow => arrow.addEventListener("click",()=>{
+       //make library array items move to the left.
+       let item = array.unshift(array[0]);
+       array.push(item);
+       console.log("hi I am left arrow");
+       })
+      )
+
+    
+       rightArrow.forEach(arrow => arrow.addEventListener("click",()=>{
+      //make array items move to the right.
+       let item = array.pop(array.length);
+       array.shift(item);
+       console.log("hi I am right arrow");
+       })
+    );
+  }
   
  
  
