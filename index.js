@@ -13,7 +13,7 @@ console.log("No, I still work! you're just terrible at this. it's all you, babe!
   const newGallary = document.getElementById("new-galary");
   const formBtn = document.querySelector("#submit");
   const dialog = document.querySelector("dialog");
-  const card = document.querySelectorAll(".card");
+  
 
   let title = document.querySelector("#book_title");
   let author = document.querySelector("#author");
@@ -61,7 +61,7 @@ formBtn.addEventListener("click",(event)=>{
     
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
-    libBox.addEventListener("mouseover", ()=> arrowNavigation(library));
+   // libBox.addEventListener("mouseover", ()=> arrowNavigation(library));
 });
 }addNewBook();
 
@@ -75,12 +75,12 @@ function resetForm(){
 }
    function displayBooks(array, book){
   
-    if (array === library){
-       console.log("displaying books in lib.");
+    if(array === library){
+     console.log("displaying books in lib.");
      libraryGallary.appendChild(createNewCard(book));
      
     }else if(array === currentRead){
-      console.log("displaying books in currentRead. ");
+      console.log("displaying books in currentRead.");
       currentGallary.appendChild(createNewCard(book));
       
     }else if(array === newToLibrary){
@@ -143,7 +143,7 @@ Book.prototype.bookInfo = function(){
         // add books that is clicked to the current read array
           currentRead.push(clickedObj);
           displayBooks(currentRead,clickedObj);
-          currentBox.addEventListener("mouseover", ()=> arrowNavigation(currentRead));
+         // currentBox.addEventListener("mouseover", ()=> arrowNavigation(currentRead));
           
           alert(`I know you want to read `+ clickedObj.title + `
                  right now but this library is for learn to code purposes 
@@ -154,8 +154,7 @@ Book.prototype.bookInfo = function(){
 
     //delete button to remove all card for gallary and array.
     delBtn.addEventListener("click", ()=>{
-      
-        card.remove();
+      card.remove();
       })
        return (card);
   }
@@ -163,17 +162,15 @@ Book.prototype.bookInfo = function(){
    
  //get new function
   function getNew(){
-     const book;
+     
     for(let n = 1; n <= 5; n++){
       if(library.length === n){
-         book = newToLibrary.push(library.at(-n));
-        displayBooks(newToLibrary, book);
+        newToLibrary.push(library.at(-n));
+        newToLibrary.forEach(book => displayBooks(newToLibrary, book));
         console.log("hi I am displaying getNew books");
            }
           }
-    newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));
- 
-     
+   // newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));   
    } getNew();
  
  
