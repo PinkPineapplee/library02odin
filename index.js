@@ -10,7 +10,7 @@ console.log("No, I still work! you're just terrible at this. it's all you, babe!
 
   const currentGallary = document.querySelector("#current-gallary");
   const libraryGallary = document.querySelector("#library-gallary");
-  const newGallary = document.getElementById("new-galary");
+  const newGallary = document.getElementById("new-gallary");
   const formBtn = document.querySelector("#submit");
   const dialog = document.querySelector("dialog");
   
@@ -84,7 +84,7 @@ function resetForm(){
       console.log("displaying books in currentRead.");
       currentGallary.appendChild(createNewCard(book));
       
-    }else if(array === newToLibrary && newToLibrary!= null){
+    }else if(array === newToLibrary && newToLibrary!== []){
       console.log("displaying books in new to lib.");
       newGallary.appendChild(createNewCard(book));
       
@@ -165,17 +165,24 @@ Book.prototype.bookInfo = function(){
  //get new function
   function getNew(){
     console.log("Hey i am inside the getnew function. ")
-    for(let n = 1; n <= 5; n++){
-      if(library.length === n){
-        newToLibrary.push(library.at(-n));
-        
-           }
-          };
+   
+      if (library.length > 5){
+        newToLibrary.push(library.at(-1));
+         newToLibrary.push(library.at(-2));
+          newToLibrary.push(library.at(-3));
+           newToLibrary.push(library.at(-4));
+            newToLibrary.push(library.at(-5));
+         }  
+          
+          console.dir(newToLibrary);
      return newToLibrary      
    };
+
  
+
  function displayGetNew(array){
-    array.forEach(book => displayBooks(array, book));
+  console.log(array,"display array.")
+    array.forEach(book => displayBooks(newToLibrary, book));
     console.log("hi I am displaying getNew books");
    //newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));
  }
