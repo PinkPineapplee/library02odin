@@ -61,7 +61,7 @@ formBtn.addEventListener("click",(event)=>{
     
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
-    //libBox.addEventListener("mouseover", () => arrowNavigation(library));
+    libBox.addEventListener("mouseover", arrowNavigation);
     displayGetNew(getNew());
 });
 }addNewBook();
@@ -184,7 +184,7 @@ Book.prototype.bookInfo = function(){
   console.log(array,"display array.")
     array.forEach(book => displayBooks(newToLibrary, book));
     console.log("hi I am displaying getNew books");
-   //newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));
+   newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));
  }
   
  
