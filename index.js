@@ -40,7 +40,7 @@ function Book(title,author,pages){
     
 }
   
-  arrowNavigation(library);
+ 
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
@@ -61,7 +61,7 @@ formBtn.addEventListener("click",(event)=>{
     
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
-    libBox.addEventListener("mouseover", arrowNavigation);
+     arrowNavigation(libraryGallary)
     displayGetNew(getNew());
 });
 }addNewBook();
@@ -144,7 +144,7 @@ Book.prototype.bookInfo = function(){
         // add books that is clicked to the current read array
           currentRead.push(clickedObj);
           displayBooks(currentRead,clickedObj);
-          currentBox.addEventListener("mouseover", ()=> arrowNavigation(currentRead));
+          arrowNavigation(currentGallary);
           
           alert(`I know you want to read `+ clickedObj.title + `
                  right now but this library is for learn to code purposes 
@@ -184,7 +184,7 @@ Book.prototype.bookInfo = function(){
   console.log(array,"display array.")
     array.forEach(book => displayBooks(newToLibrary, book));
     console.log("hi I am displaying getNew books");
-   newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));
+    arrowNavigation(newGallary);
  }
   
  
