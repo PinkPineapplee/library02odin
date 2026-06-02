@@ -163,18 +163,21 @@ Book.prototype.bookInfo = function(){
    
  //get new function
   function getNew(){
-     
+    console.log("Hey i am inside the getnew function. ")
     for(let n = 1; n <= 5; n++){
       if(library.length === n){
         newToLibrary.push(library.at(-n));
-        newToLibrary.forEach(book => displayBooks(newToLibrary, book));
-        console.log("hi I am displaying getNew books");
+        
            }
-          }
-   newBox.addEventListener("mouseover", () => arrowNavigation(newToLibrary));   
-   }getNew();
+          };
+     return newToLibrary      
+   };
  
- 
+ function displayGetNew(array){
+    array.forEach(book => displayBooks(array, book));
+    console.log("hi I am displaying getNew books");
+   newBox.addEventListener("mouseover", () => arrowNavigation(array));
+ }displayGetNew(getNew())
   
  
  
