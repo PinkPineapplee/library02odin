@@ -12,6 +12,8 @@
        //make library array items move to the left.
       let item = array.unshift(array.at(0));
        array.push(item);
+       array.forEach(book => displayBooks(array, book));
+
        console.log("hi I am left arrow");
        })
       )
@@ -21,6 +23,9 @@
       //make array items move to the right.
         let item = array.pop(array.at(array.length));
        array.shift(item);
+
+      
+       array.forEach(book => displayBooks(array, book));
        console.log("hi I am right arrow");
        })
     );

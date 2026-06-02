@@ -61,6 +61,7 @@ formBtn.addEventListener("click",(event)=>{
     
     console.log((bookInstance.title)+ " book has been added to library.");
     resetForm();
+    console.log(typeof(libraryGallary))
      arrowNavigation(libraryGallary)
     displayGetNew(getNew());
 });
@@ -144,6 +145,7 @@ Book.prototype.bookInfo = function(){
         // add books that is clicked to the current read array
           currentRead.push(clickedObj);
           displayBooks(currentRead,clickedObj);
+          console.log(typeof(currentGallary))
           arrowNavigation(currentGallary);
           
           alert(`I know you want to read `+ clickedObj.title + `
@@ -184,6 +186,7 @@ Book.prototype.bookInfo = function(){
   console.log(array,"display array.")
     array.forEach(book => displayBooks(newToLibrary, book));
     console.log("hi I am displaying getNew books");
+    console.log(typeof(newGallary))
     arrowNavigation(newGallary);
  }
   
