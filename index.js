@@ -1,6 +1,6 @@
 import {arrowNavigation} from "./arrowNavigation.js";
 
-console.log("No, I still work! you're just terrible at this. it's all you, babe!");
+console.log(" I work! you're great at this. it's all you, babe!");
 
   const addNewBookBtn = document.querySelector("button#add-new");
   
@@ -40,7 +40,7 @@ function Book(title,author,pages){
     
 }
   
-  
+  arrowNavigation(library);
 //show dialog modal for add new book form
 addNewBookBtn.addEventListener("click", ()=>{
 dialog.showModal();
