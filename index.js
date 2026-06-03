@@ -176,7 +176,7 @@ Book.prototype.bookInfo = function(){
             newToLibrary.push(library.at(-5));
          }  
        else{
-        return
+        return newToLibrary
        }   
           console.dir(newToLibrary);
      return newToLibrary      
@@ -184,9 +184,9 @@ Book.prototype.bookInfo = function(){
 
  
 
- function displayGetNew(array){
-  console.log(array,"display array.")
-    array.forEach(book => displayBooks(newToLibrary, book));
+ function displayGetNew(newArray){
+  console.log(newArray,"display newArray.")
+    newArray.forEach(book => displayBooks(newToLibrary, book));
     console.log("hi I am displaying getNew books");
     
     arrowNavigation(newToLibrary, newGallary);
