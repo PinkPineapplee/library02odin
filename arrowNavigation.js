@@ -8,10 +8,11 @@
      
       console.log("entered arrow nav function")
     
-      leftArrow.forEach(arrow => arrow.addEventListener("click",(e)=>{
+      leftArrow.forEach(arrow => arrow.addEventLister("click",(e)=>{
         let clickedArrow = e.target;
 
-        if (arrow === clickedArrow){
+        if (clickedArrow.id === "history-left" ||        clickedArrow.id === "lib-left" ||
+          clickedArrow.id === "new-left"){
        //make library array items move to the left.
       let item = array.unshift(0);
        gallary.removeChild(item);
@@ -27,7 +28,8 @@
        rightArrow.forEach(arrow => arrow.addEventListener("click",(e)=>{
          let clickedArrow = e.target;
 
-        if (arrow === clickedArrow){
+        if (clickedArrow.id === "history-right" ||        clickedArrow.id === "lib-right" ||
+          clickedArrow.id === "new-right"){
       //make array items move to the right.
         let item = array.pop(array.length);
          gallary.removeChild(item);
