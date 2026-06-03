@@ -11,7 +11,7 @@
       leftArrow.forEach(arrow => arrow.addEventListener("click",(e)=>{
         let clickedArrow = e.target;
 
-        if (clickedArrow.isclicked === true){
+        if (clickedArrow.isclicked() === true){
        //make library array items move to the left.
       let item = array.unshift(0);
        array.push(item);
@@ -26,7 +26,7 @@
        rightArrow.forEach(arrow => arrow.addEventListener("click",(e)=>{
          let clickedArrow = e.target;
 
-        if (clickedArrow.isclicked === true){
+        if (clickedArrow.isclicked() === true){
       //make array items move to the right.
         let item = array.pop(array.length);
        array.shift(item);
