@@ -78,15 +78,12 @@ function resetForm(){
    function displayBooks(array, book){
   
     if(array === library){
-     console.log("displaying books in lib.");
      libraryGallary.appendChild(createNewCard(book));
      
     }else if(array === currentRead){
-      console.log("displaying books in currentRead.");
       currentGallary.appendChild(createNewCard(book));
       
     }else if(array === newToLibrary && newToLibrary!== []){
-      console.log("displaying books in new to lib.");
       newGallary.appendChild(createNewCard(book));
       
     }
@@ -131,16 +128,14 @@ Book.prototype.bookInfo = function(){
     readBtn.addEventListener("click",(e)=>{
       let bookCard = e.target.closest(".card");
       if (!bookCard) return;
-      console.log(bookCard);
+      
       const clickedId = bookCard.dataset.id;
-      console.log(clickedId, ` is clickedid`);
-
-       const clickedObj= library.find(book => book.id === clickedId);
-      console.log(`this is bookClicked `, clickedObj);
+      const clickedObj= library.find(book => book.id === clickedId);
+      
 
       if(clickedObj.read === false){
           clickedObj.read = true;
-          console.log(clickedObj,` is clickedObj`);
+         
 
         // add books that is clicked to the current read array
           currentRead.push(clickedObj);
@@ -187,7 +182,6 @@ Book.prototype.bookInfo = function(){
  function displayGetNew(newArray){
   console.log(newArray,"display newArray.")
     newArray.forEach(book => displayBooks(newToLibrary, book));
-    console.log("hi I am displaying getNew books");
     
     arrowNavigation(newToLibrary, newGallary);
  }
