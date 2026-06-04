@@ -6,7 +6,20 @@
 //make books move from right to left
    export function arrowNavigation(array, gallary){
      
-      console.log("entered arrow nav function")
+      console.log("entered arrow nav function");
+
+      function focusArrow (array){
+        if (clickedArrow.id === "history-left" || 
+          clickedArrow.id === "lib-left" || 
+          clickedArrow.id === "new-left" ||
+          clickedArrow.id === "history-right" || 
+          clickedArrow.id === "lib-right" || 
+          clickedArrow.id === "new-right"){
+            
+          }
+        
+
+      }
     
       leftArrow.forEach(arrow => arrow.addEventListener("click",(e)=>{
         let clickedArrow = e.target;
