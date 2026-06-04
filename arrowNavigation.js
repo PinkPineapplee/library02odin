@@ -16,14 +16,14 @@
           clickedArrow.id === "new-left"){
 
       //make library array items move to the left.
-      let item = array.unshift(0);
+      let item = array.shift(0);
       gallary.removeChild(item);
 
        array.push(item);
        gallary.appendChild(item);
        console.log("hi I am left arrow");
       } else {
-        console.log(" arrow left is not working")
+        console.log(clickedArrow.id, " arrow left is not working")
       }
        })
       )
@@ -40,11 +40,11 @@
         let item = array.pop(array.length);
          gallary.removeChild(item);
 
-         array.shift(item);
+         array.unshift(item);
          gallary.appendChild(item);
        console.log("hi I am right arrow");
        }else {
-        console.log(" arrow right is not working")
+        console.log(clickedArrow.id," arrow right is not working")
       }
        })
        

@@ -161,7 +161,6 @@ Book.prototype.bookInfo = function(){
    
  //get new function
   function getNew(){
-    console.log("Hey i am inside the getnew function. ")
    
       if (library.length > 5){
         newToLibrary.push(library.at(-1));
