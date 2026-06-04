@@ -12,7 +12,13 @@
 
      myDiv.textContent = array[currentIndex];
 
-     
+//     
+
+
+
+
+
+
     
       // leftArrow.forEach(arrow => arrow.addEventListener("click",(e)=>{
       //   let clickedArrow = e.target;
