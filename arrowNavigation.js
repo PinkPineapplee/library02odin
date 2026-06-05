@@ -42,7 +42,7 @@
        
       //make library array items move to the left.
       let item = array.shift(0);
-      gallary.removeChild(item);
+      gallary.remove(item);
 
        array.push(item);
        gallary.appendChild(item);
@@ -56,7 +56,7 @@
        
       //make array items move to the right.
         let item = array.pop(array.length);
-         gallary.removeChild(item);
+         gallary.remove(item);
 
          array.unshift(item);
          gallary.appendChild(item);
