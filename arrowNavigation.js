@@ -25,7 +25,14 @@
    })
 
 
-
+   rightArrow.addEventener("clicks",()=>{
+     if (currentIndex < itemsArray.lenght -1){
+      currentIndex++
+     }else {
+      currentIndex = 0;
+     }
+     updateDisplay();
+   })
 
     
 
