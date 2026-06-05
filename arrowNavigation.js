@@ -9,15 +9,25 @@
       console.log("entered arrow nav function");
 
      let currentIndex = 0;
+    
+     function updateDisplay(){
+      myDiv.textContent = array[currentIndex];
+     }
+    
 
-     myDiv.textContent = array[currentIndex];
+   leftArrow.addEventener("click",()=>{
+      if (currentIndex > 0){
+        currentIndex--;
+      }else{
+        currentIndex = array.length - 1;
+      }
+      updateDisplay();
+   })
 
-//     
 
 
 
-
-
+    
 
     
       // leftArrow.forEach(arrow => arrow.addEventListener("click",(e)=>{
