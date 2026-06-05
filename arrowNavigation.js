@@ -4,18 +4,18 @@
 
 
 //make books move from right to left
-   export function arrowNavigation(array, gallary , myDiv){
+   export function arrowNavigation(array, gallary){
      
       console.log("entered arrow nav function");
 
      let currentIndex = 0;
     
      function updateDisplay(){
-      myDiv.textContent = array[currentIndex];
+      gallary.textContent = array[currentIndex];
      }
     
 
-   leftArrow.addEventener("click",()=>{
+   leftArrow.addEventListener("click",()=>{
       if (currentIndex > 0){
         currentIndex--;
       }else{
@@ -25,8 +25,8 @@
    })
 
 
-   rightArrow.addEventener("clicks",()=>{
-     if (currentIndex < itemsArray.lenght -1){
+   rightArrow.addEventListener("clicks",()=>{
+     if (currentIndex < array.lenght - 1){
       currentIndex++
      }else {
       currentIndex = 0;
