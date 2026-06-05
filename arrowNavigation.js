@@ -9,58 +9,60 @@
      
       console.log("entered arrow nav function");
 
-  //    let currentIndex = 0;
+     let currentIndex = 0;
     
-  //    function updateDisplay(){
-  //     gallary.textContent = array[currentIndex];
-  //    }
-    
-
-  //  libLeft.addEventListener("click",()=>{
-  //     if (currentIndex > 0){
-  //       currentIndex--;
-  //     }else{
-  //       currentIndex = array.length - 1;
-  //     }
-  //     updateDisplay();
-  //  })
-
-
-  //  librit.addEventListener("clicks",()=>{
-  //    if (currentIndex < array.lenght - 1){
-  //     currentIndex++;
-  //    }else {
-  //     currentIndex = 0;
-  //    }
-  //    updateDisplay();
-  //  })
-
+     function updateDisplay(action1, action2){
+      gallary.textContent += gallary.action1(array[currentIndex]);
+       gallary.textContent += gallary.action2(array[currentIndex]);
+     }
     
 
+   libLeft.addEventListener("click",()=>{
+      if (currentIndex > 0){
+        currentIndex--;
+      }else{
+        currentIndex = array.length - 1;
+      }
+      updateDisplay(remove,appendChild);
+   })
+
+
+   librit.addEventListener("clicks",()=>{
+     if (currentIndex < array.lenght - 1){
+      currentIndex++;
+     }else {
+      currentIndex = 0;
+     }
+     updateDisplay(appendChild, remove);
+   })
+
     
-      libLeft.addEventListener("click",()=>{
+
+    
+    //   libLeft.addEventListener("click",()=>{
        
-      //make library array items move to the left.
-      let item = array.shift(0);
-      gallary.remove(item);
+    //   //make library array items move to the left.
+    //   let item = array.shift(0);
+    //   console.log(item)
+    //  // gallary.remove(item);
 
-       array.push(item);
-       gallary.appendChild(item);
-       console.log("hi I am left arrow");
+    //    array.push(item);
+    //   // gallary.appendChild(item);
+    //    console.log("hi I am left arrow");
       
-       })
+    //    })
       
 
     
-       librit.addEventListener("clicks",()=>{
+    //    librit.addEventListener("clicks",()=>{
        
-      //make array items move to the right.
-        let item = array.pop(array.length);
-         gallary.remove(item);
+    //   //make array items move to the right.
+    //     let item = array.pop(array.length);
+    //      gallary.remove(item);
 
-         array.unshift(item);
-         gallary.appendChild(item);
-       console.log("hi I am right arrow"); 
-       })
+    //      array.unshift(item);
+    //      gallary.appendChild(item);
+    //    console.log("hi I am right arrow"); 
+    //    })
          
   }
