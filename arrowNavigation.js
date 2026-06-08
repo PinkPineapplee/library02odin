@@ -12,7 +12,7 @@
       libLeft.addEventListener("click",()=>{
        
       //make library array items move to the left.
-      let itemLeft = array.shift(0);
+      let itemLeft = array.shift(array[0]);
       console.log(itemLeft)
       gallary.remove(itemLeft);
 
@@ -27,7 +27,7 @@
        librit.addEventListener("clicks",()=>{
        
       //make array items move to the right.
-        let itemRit = array.pop(array.length - 1);
+        let itemRit = array.pop(array[array.length - 1]);
          gallary.remove(itemRit);
 
          array.unshift(itemRit);
