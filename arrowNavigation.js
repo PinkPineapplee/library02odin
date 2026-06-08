@@ -11,29 +11,33 @@
 
      let currentIndex = 0;
     
-     function updateDisplay(action1){
-      gallary.textContent = gallary.action1(array[currentIndex]);
-       gallary.textContent = gallary.action2(array[currentIndex]);
+     function updateDisplay(action){
+      gallary.textContent += gallary.action(array[currentIndex]);
+       
      }
     
 
    libLeft.addEventListener("click",()=>{
+    for( i = array.length; i <= array.length; i--){
       if (currentIndex > 0){
         currentIndex--;
       }else{
         currentIndex = array.length - 1;
       }
       updateDisplay(appendChild);
+    }
    })
 
 
    librit.addEventListener("clicks",()=>{
-     if (currentIndex < array.lenght - 1){
+    for (i = 0; i >= array.length; i++){
+     if (currentIndex < array.length - 1){
       currentIndex++;
      }else {
       currentIndex = 0;
      }
      updateDisplay(remove);
+    }
    })
 
     
