@@ -11,9 +11,9 @@
 
      let currentIndex = 0;
     
-     function updateDisplay(action1, action2){
-      gallary.textContent += gallary.action1(array[currentIndex]);
-       gallary.textContent += gallary.action2(array[currentIndex]);
+     function updateDisplay(action1){
+      gallary.textContent = gallary.action1(array[currentIndex]);
+       gallary.textContent = gallary.action2(array[currentIndex]);
      }
     
 
@@ -23,7 +23,7 @@
       }else{
         currentIndex = array.length - 1;
       }
-      updateDisplay(remove,appendChild);
+      updateDisplay(appendChild);
    })
 
 
@@ -33,7 +33,7 @@
      }else {
       currentIndex = 0;
      }
-     updateDisplay(appendChild, remove);
+     updateDisplay(remove);
    })
 
     
