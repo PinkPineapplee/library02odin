@@ -79,6 +79,7 @@ footer{
     align-content: end; 
     border-radius: 5px;
     flex:none;
+    scroll-snap-align: start;
 }
 
 #current-gallary .card{
@@ -134,13 +135,16 @@ footer{
     display:flex;
     justify-content:center;
     align-items: center;   
-    
+    cursor: pointer;
+    user-select: none;
 }
 
 .arrow:hover{
     background-color: rgb(189, 143, 232);
    
 }
+
+
 
 button#add-new,a[href="about.html"],a[href="https://www.amazon.com/amz-books/store?ccs_id=9d8dca00-d3f7-4059-bfe8-6caa49b2adc9"]{
     font-style: none;
