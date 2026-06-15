@@ -5,34 +5,15 @@
   const librit = document. querySelector("#lib-right");
 
 //make books move from right to left
-   export function arrowNavigation(array, gallary){
+   export function arrowNavigation(gallary){
      
       console.log("entered arrow nav function");
 
-      libLeft.addEventListener("click",()=>{
-       
-      //make library array items move to the left.
-      let itemLeft = array.shift(array[0]);
-      console.log(itemLeft)
-      gallary.remove(itemLeft);
+     leftArrow.forEach(arrow => arrow.addEventListener("click", ()=>{
+      gallary.scrollLeft += 300;
+     }));
 
-       array.push(itemLeft);
-       gallary.appendChild(itemLeft);
-       console.log("hi I am left arrow");
-      
-       })
-      
-
-    
-       librit.addEventListener("clicks",()=>{
-       
-      //make array items move to the right.
-        let itemRit = array.pop(array[array.length - 1]);
-         gallary.remove(itemRit);
-
-         array.unshift(itemRit);
-         gallary.appendChild(itemRit);
-       console.log("hi I am right arrow"); 
-        })
-         
-  }
+     rightArrow.forEach(arrow => arrow.addEventListener("click", ()=>{
+      gallary.scrollRight -= 300;
+     }));
+      }
